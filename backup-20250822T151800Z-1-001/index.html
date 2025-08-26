@@ -2423,136 +2423,184 @@
 
         <!-- Contact Form -->
         <section class="py-20">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Contact Form -->
-                    <div class="animate-slide-up">
-                        <h2 class="text-3xl font-bold text-brand-red mb-8">Get In Touch</h2>
-                        <form class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                                    <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300" placeholder="+62 xxx xxx xxxx">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">Company</label>
-                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300" placeholder="Company Name">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
-                                    <option value="">Select a service</option>
-                                    <option value="creative">Creative Design</option>
-                                    <option value="video">Video Production</option>
-                                    <option value="digital">Digital Marketing</option>
-                                    <option value="social">Social Media</option>
-                                    <option value="events">Event Management</option>
-                                    <option value="print">Print Media</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Budget Range</label>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
-                                    <option value="">Select budget range</option>
-                                    <option value="10k-50k">$10,000 - $50,000</option>
-                                    <option value="50k-100k">$50,000 - $100,000</option>
-                                    <option value="100k-250k">$100,000 - $250,000</option>
-                                    <option value="250k+">$250,000+</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Message *</label>
-                                <textarea rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300" placeholder="Tell us about your project..."></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold hover:bg-red-800 transition-colors duration-300 transform hover:scale-105">
-                                Send Message
-                            </button>
-                        </form>
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12">
+            
+            <!-- Contact Form -->
+            <div class="animate-slide-up">
+                <h2 class="text-3xl font-bold text-brand-red mb-8">Get In Touch</h2>
+                <form id="contact-form" action="https://formspree.io/f/mrbaglvv" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                                       focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+                                placeholder="email">
+                        </div>
                     </div>
 
-                    <!-- Contact Information -->
-                    <div class="animate-slide-up" style="animation-delay: 0.2s;">
-                        <h2 class="text-3xl font-bold text-brand-red mb-8">Contact Information</h2>
-                        <div class="space-y-8">
-                            <!-- Headquarters -->
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-start">
-                                    <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
-                                        <i class="fas fa-building text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-800 mb-2">Headquarters</h3>
-                                        <p class="text-gray-600">Jl. Raya Margonda No. 123<br>Depok, West Java 16424<br>Indonesia</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
+                        <select name="service" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+                            <option value="">Select a service</option>
+                            <option value="creative">Creative Design</option>
+                            <option value="video">Video Production</option>
+                            <option value="digital">Digital Marketing</option>
+                            <option value="social">Social Media</option>
+                            <option value="events">Event Management</option>
+                            <option value="print">Print Media</option>
+                        </select>
+                    </div>
 
-                            <!-- Phone -->
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-start">
-                                    <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
-                                        <i class="fas fa-phone text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-800 mb-2">Phone</h3>
-                                        <p class="text-gray-600">+62 21 8765 4321<br>+62 812 3456 7890</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Budget Range</label>
+                        <select name="budget" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+                            <option value="">Select budget range</option>
+                            <option value="10k-50k">$10,000 - $50,000</option>
+                            <option value="50k-100k">$50,000 - $100,000</option>
+                            <option value="100k-250k">$100,000 - $250,000</option>
+                            <option value="250k+">$250,000+</option>
+                        </select>
+                    </div>
 
-                            <!-- Email -->
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-start">
-                                    <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
-                                        <i class="fas fa-envelope text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-800 mb-2">Email</h3>
-                                        <p class="text-gray-600">info@mediamandiri.com<br>hello@mediamandiri.com</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+                        <textarea name="message" rows="6" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
 
-                            <!-- Business Hours -->
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <div class="flex items-start">
-                                    <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
-                                        <i class="fas fa-clock text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-800 mb-2">Business Hours</h3>
-                                        <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Success & Error Messages -->
+                    <p id="form-success" class="hidden text-green-600 font-semibold transition-opacity duration-500">✅ Your message has been sent successfully!</p>
+                    <p id="form-error" class="hidden text-red-600 font-semibold transition-opacity duration-500">❌ Oops! Something went wrong. Please try again.</p>
 
-                            <!-- Social Media -->
-                            <div class="bg-white p-6 rounded-lg shadow-lg">
-                                <h3 class="text-lg font-bold text-gray-800 mb-4">Follow Us</h3>
-                                <div class="flex space-x-4">
-                                    <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
-                                        <i class="fab fa-facebook-f text-lg"></i>
-                                    </a>
-                                    <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
-                                        <i class="fab fa-instagram text-lg"></i>
-                                    </a>
-                                    <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
-                                        <i class="fab fa-linkedin-in text-lg"></i>
-                                    </a>
-                                    <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
-                                        <i class="fab fa-twitter text-lg"></i>
-                                    </a>
-                                    <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
-                                        <i class="fab fa-youtube text-lg"></i>
-                                    </a>
-                                </div>
+                    <button type="submit" 
+                        class="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold 
+                               hover:bg-red-800 transition-colors duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="animate-slide-up" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold text-brand-red mb-8">Contact Information</h2>
+                <div class="space-y-8">
+
+                    <!-- Headquarters -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-start">
+                            <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-building text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Headquarters</h3>
+                                <p class="text-gray-600">Jl. Raya Margonda No. 123<br>Depok, West Java 16424<br>Indonesia</p>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Phone -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-start">
+                            <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Phone</h3>
+                                <p class="text-gray-600">+62 21 8765 4321<br>+62 812 3456 7890</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-start">
+                            <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Email</h3>
+                                <p class="text-gray-600">info@mediamandiri.com<br>hello@mediamandiri.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-start">
+                            <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Business Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-brand-red text-white p-3 rounded-lg hover:bg-red-800 transition-colors duration-300">
+                                <i class="fab fa-youtube text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript to handle Formspree response -->
+<script>
+const form = document.getElementById("contact-form");
+const successMsg = document.getElementById("form-success");
+const errorMsg = document.getElementById("form-error");
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+        successMsg.classList.remove("hidden");
+        errorMsg.classList.add("hidden");
+        form.reset();
+        setTimeout(() => successMsg.classList.add("hidden"), 5000);
+    } else {
+        successMsg.classList.add("hidden");
+        errorMsg.classList.remove("hidden");
+    }
+});
+</script>
+
 
         <!-- Map Section -->
         <section class="py-20 bg-gray-50">
