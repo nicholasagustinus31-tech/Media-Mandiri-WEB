@@ -201,44 +201,18 @@
     <!-- Home Page -->
     <div id="home" class="page active">
         <!-- Hero Section -->
+    <br>
     <div class="slider-container">
     <div class="skitter skitter-large with-dots">
         <ul>
-        <li>
-            <a href="#cut">
-            <img src="backup/Media WEB/Asset/map.png" class="cut" />
-            </a>
-            <div class="label_text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                <a href="#see-more" class="btn btn-xs btn-warning">See more</a>
-            </p>
-            </div>
-        </li>
-        <li>
-            <a href="#swapBlocks">
-            <img src="backup/Media WEB/Asset/image-2.jpg" class="swapBlocks" />
-            </a>
-            <div class="label_text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                <a href="#see-more" class="btn btn-xs btn-warning">See more</a>
-            </p>
-            </div>
-        </li>
-        <li>
-            <a href="#swapBarsBack">
-            <img src="backup/Media WEB/Asset/image-3.jpg" class="swapBarsBack" />
-            </a>
-            <div class="label_text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                <a href="#see-more" class="btn btn-xs btn-warning">See more</a>
-            </p>
-            </div>
-        </li>
+            <li><a href="#cut"><img src="backup/Media WEB/Asset/map.png" class="cut" /></a></li>
+            <li><a href="#swapBlocks"><img src="backup/Media WEB/Asset/image-2.jpg" class="swapBlocks" /></a></li>
+            <li><a href="#cut"><img src="backup/Media WEB/Asset/image-3.jpg" class="cut" /></a></li>
         </ul>
     </div>
+
+    <button class="custom-prev">❮</button>
+    <button class="custom-next">❯</button>
     </div>
 
         <!-- About Us Preview -->
@@ -2729,10 +2703,25 @@ form.addEventListener("submit", async function(event) {
     <script>
 
           $(function() {
-            $('.skitter-large').skitter();
+            var $slider = $('.skitter-large').skitter({
+            navigation: false,  
+            dots: true,
+            preview: false,
+            show_randomly: false
             });
 
-            
+            $('.custom-prev').on('click', function(e) {
+            e.preventDefault();
+            $slider.skitter('prev');   
+            });
+
+            $('.custom-next').on('click', function(e) {
+            e.preventDefault();
+            $slider.skitter('next');
+            });
+        });
+
+
         // Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const pages = document.querySelectorAll('.page');
@@ -3425,6 +3414,7 @@ continentMaps.forEach(map => {
         item?.classList.remove('hover');
     });
 });
+
     </script>
     
     <style>
@@ -3439,7 +3429,28 @@ continentMaps.forEach(map => {
         width: 1000px;   
         max-width: 100%; 
         }
+        
+        
+        .custom-prev, .custom-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        z-index: 200; 
+        border-radius: 50%;
+        font-size: 18px;
+        }
 
+        .custom-prev { left: 15px; }
+        .custom-next { right: 15px; }
+
+        .custom-prev:hover, .custom-next:hover {
+        background: rgba(0,0,0,0.8);
+        }
 
         .ripple {
             position: absolute;
