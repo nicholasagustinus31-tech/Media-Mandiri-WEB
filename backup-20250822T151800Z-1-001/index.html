@@ -59,6 +59,18 @@
             .nav-link {
                 font-family: Helvetica, Arial, sans-serif !important;
             }
+        .years-big {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .clients-small {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .partnerships-medium {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
         .glass-effect {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.95);
@@ -211,7 +223,7 @@
         </div>
             
         <!-- About Us Preview -->
-        <section class="py-20 bg-gray-50">
+         <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 text-center">
             
             <!-- Judul -->
@@ -237,7 +249,11 @@
                 </svg>
                 </div>
                 <div class="text-lg font-bold text-brand-red mb-2">
-                <span class="counter inline-block" data-target="28">0</span><span class="inline-block">+ years</span>
+                                <div class="flex items-center justify-center">
+                                    <span class="counter years-big" data-target="28">0</span>
+                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="years-big">years</span>
+                                </div>
                 </div>
                 <p class="text-gray-600 font-medium">
                 Experience as a trusted media representative since 1997
@@ -252,7 +268,11 @@
                 </svg>
                 </div>
                 <div class="text-lg font-bold text-brand-red mb-2">
-                <span class="counter inline-block" data-target="100">0</span><span class="inline-block">+ Clients</span>
+                                <div class="flex items-center justify-center">
+                                    <span class="counter years-big" data-target="100">0</span>
+                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="years-big">Clients</span>
+                                </div>
                 </div>
                 <p class="text-gray-600 font-medium">
                 From diverse industries across Indonesia and abroad
@@ -267,7 +287,11 @@
                 </svg>
                 </div>
                 <div class="text-lg font-bold text-brand-red mb-2">
-                <span class="counter inline-block" data-target="10">0</span><span class="inline-block">+ industries</span>
+                                <div class="flex items-center justify-center">
+                                    <span class="counter years-big" data-target="10">0</span>
+                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="years-big">industries</span>
+                                </div>
                 </div>
                 <p class="text-gray-600 font-medium">
                 Serving sectors from finance, lifestyle, to government
@@ -282,7 +306,10 @@
                 </svg>
                 </div>
                 <div class="text-lg font-bold text-brand-red mb-2">
-                <span class="inline-block">Global partnerships</span>
+                                <div class="flex items-center justify-center">
+                                      <span class="partnerships-medium">Global</span>
+                                      <span class="partnerships-medium mx-1">partnerships</span>
+                                </div>
                 </div>
                 <p class="text-gray-600 font-medium">
                 Exclusive representative for top-tier international media
@@ -296,7 +323,6 @@
             </button>
         </div>
         </section>
-
 
         <!-- Our Services Preview -->
         <section class="py-20">
@@ -413,57 +439,105 @@
     <!-- About Us Page -->
     <div id="about" class="page">
         <!-- Hero Section -->
-               <section class="py-20 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold text-brand-red mb-6">About PT. Media Mandiri</h2>
-                    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="animate-slide-up">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Team Meeting" class="rounded-lg shadow-xl hover-scale">
-                    </div>
-                    <div class="animate-slide-up" style="animation-delay: 0.2s;">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Leading International Media Company</h3>
-                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                            Founded in 1997, Media Mandiri is a trusted media company in Indonesia. We connect global and local media with clients, supported by a professional team with extensive industry experience.
-                        </p>
-                        <div class="grid grid-cols-2 gap-6 mb-8">
-            <div class="text-center">
-                <div class="text-3xl font-bold text-gray-900">
-                    <span class="counter text-brand-red" data-target="28">0</span><span class="text-brand-red">+ years</span>
-                </div>
-                <p class="text-gray-600 font-semibold">Experience as a trusted media representative since 1997</p>
+             <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            
+            <!-- Judul -->
+            <div class="mb-16 animate-fade-in">
+            <h2 class="text-4xl font-bold text-brand-red mb-6">About PT. Media Mandiri</h2>
+            <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
+            <p class="text-gray-600 mb-6 text-lg leading-relaxed max-w-3xl mx-auto" style="font-family: Helvetica, Arial, sans-serif;">
+                Founded in 1997, Media Mandiri is a trusted media company in Indonesia. 
+                We connect global and local media with clients, supported by a professional 
+                team with extensive industry experience.
+            </p>
             </div>
 
-            <div class="text-center">
-                <div class="text-3xl font-bold text-gray-900">
-                    <span class="counter text-brand-red" data-target="100">0</span><span class="text-brand-red">+ Clients</span>
+            <!-- Counter Cards sejajar -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            
+            <!-- Card 1 -->
+            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+                <div class="flex justify-center mb-3">
+                <!-- Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.1 0-2 .9-2 2v10h4V10c0-1.1-.9-2-2-2zM6 20h12M4 4h16v4H4V4z" />
+                </svg>
                 </div>
-                <p class="text-gray-600 font-semibold">From diverse industries across Indonesia and abroad</p>
+                <div class="text-lg font-bold text-brand-red mb-2">
+                                <div class="flex items-center justify-center">
+                                    <span class="counter years-big" data-target="28">0</span>
+                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="years-big">years</span>
+                                </div>
+                </div>
+                <p class="text-gray-600 font-medium">
+                Experience as a trusted media representative since 1997
+                </p>
             </div>
 
-            <div class="text-center">
-                <div class="text-3xl font-bold text-gray-900">
-                    <span class="counter text-brand-red" data-target="10">0</span><span class="text-brand-red">+ industries</span>
+            <!-- Card 2 -->
+            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+                <div class="flex justify-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5V4H2v16h5m10 0v-6H7v6m10 0H7" />
+                </svg>
                 </div>
-                <p class="text-gray-600 font-semibold">Serving sectors from finance, lifestyle, to government</p>
+                <div class="text-lg font-bold text-brand-red mb-2">
+                                <div class="flex items-center justify-center">
+                                    <span class="counter years-big" data-target="100">0</span>
+                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="years-big">Clients</span>
+                                </div>
+                </div>
+                <p class="text-gray-600 font-medium">
+                From diverse industries across Indonesia and abroad
+                </p>
             </div>
 
-            <div class="text-center">
-            <div class="text-3xl font-bold text-gray-900">
-                    <span class="text-brand-red">Global partnerships</span>
+            <!-- Card 3 -->
+            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+                <div class="flex justify-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h5V9H4v8h5z" />
+                </svg>
+                </div>
+                <div class="text-lg font-bold text-brand-red mb-2">
+                                <div class="flex items-center justify-center">
+                                    <span class="counter years-big" data-target="10">0</span>
+                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="years-big">industries</span>
+                                </div>
+                </div>
+                <p class="text-gray-600 font-medium">
+                Serving sectors from finance, lifestyle, to government
+                </p>
             </div>
-            <p class="text-gray-600 font-semibold">Exclusive representative for top-tier international media</p>
+
+            <!-- Card 4 -->
+            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+                <div class="flex justify-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0V3m0 4v4m-8-4H3m0 0V3m0 4v4m10 10h8m0 0v-4m0 4v4m-8-4H3m0 0v-4m0 4v4" />
+                </svg>
+                </div>
+                <div class="text-lg font-bold text-brand-red mb-2">
+                                <div class="flex items-center justify-center">
+                                      <span class="partnerships-medium">Global</span>
+                                      <span class="partnerships-medium mx-1">partnerships</span>
+                                </div>
+                </div>
+                <p class="text-gray-600 font-medium">
+                Exclusive representative for top-tier international media
+                </p>
             </div>
             </div>
 
-                        <button class="bg-brand-red text-white px-6 py-3 rounded-full hover:bg-red-800 transition-colors duration-300">
-                            Learn More About Us
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <!-- Tombol -->
+            <button class="bg-brand-red text-white px-6 py-3 rounded-full hover:bg-red-800 transition-colors duration-300">
+            Learn More About Us
+            </button>
+        </div>
         </section>
 
 
