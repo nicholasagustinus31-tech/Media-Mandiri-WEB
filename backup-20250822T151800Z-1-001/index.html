@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT. Media Mandiri</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <script>
@@ -225,7 +226,7 @@
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="home">Home</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="about">About Us</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="services">Services</a>
-          <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="projects">Our Projects</a>
+          <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="projects">Clients & Projects</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="markets">Markets</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="peoples">Peoples</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="contact">Contact</a>
@@ -804,7 +805,7 @@
         <!-- Project Statistics -->
         <section class="py-20 bg-gray-50">
             <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold text-brand-red mb-4">Our Projects</h2>
+                    <h2 class="text-4xl font-bold text-brand-red mb-4">Clients & Projects</h2>
 <p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
     Transforming brands through innovative media solutions across international markets
 </p>
@@ -2583,70 +2584,74 @@
         <div class="grid lg:grid-cols-2 gap-12">
             
             <!-- Contact Form -->
-            <div class="animate-slide-up">
-                <h2 class="text-3xl font-bold text-brand-red mb-8">Get In Touch</h2>
-                <form id="contact-form" action="contact.php" method="POST" class="space-y-6">
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Captcha</label>
-                        <img src="captcha.php" alt="Captcha Image" style="margin-bottom:8px;">
-                        <input type="text" name="captcha" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
-                            placeholder="Enter the code above">
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" name="email" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                                       focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
-                                placeholder="email">
-                        </div>
-                    </div>
+<div class="animate-slide-up">
+  <h2 class="text-3xl font-bold text-brand-red mb-8">Get In Touch</h2>
+  <form id="contact-form" action="https://formspree.io/f/mrbaglvv" method="POST" class="space-y-6">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+        <input type="email" name="email" required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                 focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+          placeholder="email">
+      </div>
+    </div>
 
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
-                        <select name="service" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
-                            <option value="">Select a service</option>
-                            <option value="creative">Creative Design</option>
-                            <option value="video">Video Production</option>
-                            <option value="digital">Digital Marketing</option>
-                            <option value="social">Social Media</option>
-                            <option value="events">Event Management</option>
-                            <option value="print">Print Media</option>
-                        </select>
-                    </div>
+    <div>
+      <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
+      <select name="service" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+               focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+        <option value="">Select a service</option>
+        <option value="creative">Creative Design</option>
+        <option value="video">Video Production</option>
+        <option value="digital">Digital Marketing</option>
+        <option value="social">Social Media</option>
+        <option value="events">Event Management</option>
+        <option value="print">Print Media</option>
+      </select>
+    </div>
 
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Budget Range</label>
-                        <select name="budget" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
-                            <option value="">Select budget range</option>
-                            <option value="10k-50k">$10,000 - $50,000</option>
-                            <option value="50k-100k">$50,000 - $100,000</option>
-                            <option value="100k-250k">$100,000 - $250,000</option>
-                            <option value="250k+">$250,000+</option>
-                        </select>
-                    </div>
+    <div>
+      <label class="block text-gray-700 font-semibold mb-2">Budget Range</label>
+      <select name="budget" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+               focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+        <option value="">Select budget range</option>
+        <option value="10k-50k">$10,000 - $50,000</option>
+        <option value="50k-100k">$50,000 - $100,000</option>
+        <option value="100k-250k">$100,000 - $250,000</option>
+        <option value="250k+">$250,000+</option>
+      </select>
+    </div>
 
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Message *</label>
-                        <textarea name="message" rows="6" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                                   focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
-                            placeholder="Tell us about your project..."></textarea>
-                    </div>
+    <div>
+      <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+      <textarea name="message" rows="6" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+               focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+        placeholder="Tell us about your project..."></textarea>
+    </div>
 
+    <!-- reCAPTCHA -->
+    <div class="g-recaptcha mt-4" data-sitekey="6Ley77UrAAAAAB674iOc7fntrI0wl1DfZBx-CAdK"></div>
+    <p id="captcha-error" class="text-red-600 hidden mt-2">
+      ⚠️ Silakan centang captcha dulu.
+    </p>
 
-                    <button type="submit"
-                        class="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold 
-                        hover:bg-red-800 transition-colors duration-300 transform hover:scale-105">
-                        Send Message
-            
-            </div>
+    <!-- Tombol -->
+    <button type="submit"
+      class="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold 
+             hover:bg-red-800 transition-colors duration-300 transform hover:scale-105">
+      Send Message
+    </button>
+
+    <!-- Pesan sukses & error -->
+    <p id="form-success" class="text-green-600 hidden mt-4">✅ Pesan berhasil terkirim.</p>
+    <p id="form-error" class="text-red-600 hidden mt-4">⚠️ Terjadi kesalahan, coba lagi.</p>
+  </form>
+</div>
+
 
             <!-- Contact Information -->
             <div class="animate-slide-up" style="animation-delay: 0.2s;">
@@ -2732,6 +2737,53 @@
         </div>
     </div>
 </section>
+
+<script>
+const form = document.getElementById("contact-form");
+const captchaError = document.getElementById("captcha-error");
+const successMsg = document.getElementById("form-success");
+const errorMsg = document.getElementById("form-error");
+
+form.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const captchaResponse = grecaptcha.getResponse();
+  if (!captchaResponse) {
+    captchaError.classList.remove("hidden");
+    return;
+  } else {
+    captchaError.classList.add("hidden");
+  }
+
+  const formData = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      successMsg.classList.remove("hidden");
+      errorMsg.classList.add("hidden");
+
+      form.reset();
+      grecaptcha.reset();
+
+      setTimeout(() => {
+        successMsg.classList.add("hidden");
+      }, 5000);
+    } else {
+      successMsg.classList.add("hidden");
+      errorMsg.classList.remove("hidden");
+    }
+  } catch (err) {
+    successMsg.classList.add("hidden");
+    errorMsg.classList.remove("hidden");
+  }
+});
+</script>
+
 
         <!-- Map Section -->
         <section class="py-20 bg-gray-50">
@@ -3218,7 +3270,7 @@
                 <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="home">Home</a>
                 <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="about">About Us</a>
                 <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="services">Services</a>
-                <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="projects">Our Projects</a>
+                <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="projects">Clients & Projects</a>
                 <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="markets">Markets</a>
                 <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="peoples">Peoples</a>
                 <a href="#" class="block text-gray-700 hover:text-brand-red py-2 nav-link" data-page="contact">Contact</a>
@@ -3507,6 +3559,7 @@ continentMaps.forEach(map => {
         item?.classList.remove('hover');
     });
 });
+
     </script>
     
     <style>
