@@ -53,6 +53,27 @@
     </script>
 
     <style>
+        .counter-card {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04) inset;
+            border-radius: 1.25rem;
+            border: 1px solid #ededed;
+            background: linear-gradient(135deg, #fff 70%, #f7f7fa 100%);
+            padding: 2.25rem 1.25rem;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+        }
+        .counter-card:hover {
+            box-shadow: 0 16px 40px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.10);
+            border-color: #e0e0e0;
+            transform: translateY(-4px) scale(1.03);
+        }
+        .plus-symbol {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #680307;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+        }
         .hero-bg {
             background: linear-gradient(135deg, rgba(102, 26, 28, 0.1) 0%, rgba(225, 196, 49, 0.1) 100%);
         }
@@ -241,7 +262,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             
             <!-- Card 1 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <!-- Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,7 +272,7 @@
                 <div class="text-lg font-bold text-brand-red mb-2">
                                 <div class="flex items-center justify-center">
                                     <span class="counter years-big" data-target="28">0</span>
-                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="counter plus-symbol mx-1">+</span>
                                     <span class="years-big">years</span>
                                 </div>
                 </div>
@@ -261,7 +282,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5V4H2v16h5m10 0v-6H7v6m10 0H7" />
@@ -270,7 +291,7 @@
                 <div class="text-lg font-bold text-brand-red mb-2">
                                 <div class="flex items-center justify-center">
                                     <span class="counter years-big" data-target="100">0</span>
-                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="counter plus-symbol mx-1">+</span>
                                     <span class="years-big">Clients</span>
                                 </div>
                 </div>
@@ -280,7 +301,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h5V9H4v8h5z" />
@@ -289,7 +310,7 @@
                 <div class="text-lg font-bold text-brand-red mb-2">
                                 <div class="flex items-center justify-center">
                                     <span class="counter years-big" data-target="10">0</span>
-                                    <span class="plus-symbol years-big mx-1">+</span>
+                                    <span class="counter plus-symbol mx-1">+</span>
                                     <span class="years-big">industries</span>
                                 </div>
                 </div>
@@ -299,7 +320,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0V3m0 4v4m-8-4H3m0 0V3m0 4v4m10 10h8m0 0v-4m0 4v4m-8-4H3m0 0v-4m0 4v4" />
@@ -455,9 +476,8 @@
 
             <!-- Counter Cards sejajar -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            
             <!-- Card 1 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <!-- Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -477,7 +497,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5V4H2v16h5m10 0v-6H7v6m10 0H7" />
@@ -496,7 +516,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h5V9H4v8h5z" />
@@ -515,7 +535,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="p-6 border-2 border-brand-red rounded-xl shadow-sm hover:shadow-lg transition">
+            <div class="counter-card">
                 <div class="flex justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0V3m0 4v4m-8-4H3m0 0V3m0 4v4m10 10h8m0 0v-4m0 4v4m-8-4H3m0 0v-4m0 4v4" />
@@ -2848,7 +2868,7 @@ form.addEventListener("submit", async function(event) {
             
             // Counter animation
             function animateCounters() {
-                const counters = document.querySelectorAll('.counter, .project-counter');
+                const counters = document.querySelectorAll('.counter[data-target], .project-counter[data-target]');
                 counters.forEach(counter => {
                     const target = parseInt(counter.getAttribute('data-target'));
                     const increment = target / 50;
