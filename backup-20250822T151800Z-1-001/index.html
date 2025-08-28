@@ -122,25 +122,34 @@
     top: 50%; /* Lingkaran berada di tengah */
     transform: translate(-50%, -50%);
 }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: #680307;
-            border-radius: 50%;
-            top: 0;
-        }
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: #680307;
-        }
+       /* Keep dots for all timeline items */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #680307;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* Remove the dot on the very first timeline item */
+.timeline-item:first-child::before {
+    display: none;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 100px;   /* adjust until it starts exactly at your first circle */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: #680307;
+}
+
         .continent-map {
             transition: all 0.3s ease;
         }
