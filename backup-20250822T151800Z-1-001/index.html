@@ -125,33 +125,53 @@
     top: 50%; /* Lingkaran berada di tengah */
     transform: translate(-50%, -50%);
 }
-       /* Keep dots for all timeline items */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background: #680307;
-    border-radius: 50%;
-    z-index: 10;
+ 
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 0;
+  width: 80%;
 }
 
-/* Remove the dot on the very first timeline item */
-.timeline-item:first-child::before {
-    display: none;
-}
-
-.timeline-line {
+/* The vertical line */
+.timeline::before {
+  content: '';
   position: absolute;
-  top: 100px;   /* adjust until it starts exactly at your first circle */
+  top: 0;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
   width: 4px;
-  background: #680307;
+  background: #ccc; /* line color */
+  transform: translateX(-50%);
+  z-index: 0;
 }
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 40px 0;
+}
+
+.timeline-item .circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  z-index: 1;
+  background: #fff;
+}
+
+.timeline-item .content {
+  width: 40%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
 
         .continent-map {
             transition: all 0.3s ease;
@@ -566,75 +586,93 @@ setInterval(showNextSlide, 2000);
 
         <!-- Timeline Section -->
         <section class="py-20">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-brand-red mb-6">Our Journey</h2>
-                    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
-                </div>
-                <div class="relative flex flex-col gap-16">
-                    <div class="timeline-line"></div>
-                    <div class="space-y-16">
-                        <!-- Left box -->
-                        <div class="timeline-item relative flex items-center">
-                            <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
-                                <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl">
-                                    <h3 class="text-2xl font-bold text-brand-red mb-2">2009-2011</h3>
-                                    <h4 class="text-2xl font-semibold text-gray-800 mb-3">Our Humble Beginnings</h4>
-                                    <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center justify-center" style="width:200px;">
-                                <div class="relative flex flex-col items-center justify-center">
-                                    <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
-                                        <img src="HomePhoto.svg" alt="Humble Beginnings" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-1/2 pl-8"></div>
-                        </div>
-                    </div>
-                    
-                   <!-- Right box -->
-                   <div class="timeline-item relative flex items-center">
-                        <div class="w-1/2 pr-8"></div>
-                        <div class="flex flex-col items-center justify-center" style="width:200px;">
-                            <div class="relative flex flex-col items-center justify-center">
-                                <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
-                                    <img src="HomePhoto.svg" alt="Agency Born" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-1/2 pl-8 animate-slide-up flex flex-col items-start justify-center">
-                            <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
-                                <h3 class="text-2xl font-bold text-brand-red mb-2">March 2011</h3>
-                                <h4 class="text-2xl font-semibold text-gray-800 mb-3">An Agency is Born</h4>
-                                <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                            </div>
-                        </div>
-                    </div>
+  <div class="max-w-6xl mx-auto px-4">
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-brand-red mb-6">Our Journey</h2>
+      <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
+    </div>
 
-                    
-                   <!-- Left box -->
-                   <div class="timeline-item relative flex items-center">
-                        <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
-                            <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
-                                <h3 class="text-2xl font-bold text-brand-red mb-2">2025</h3>
-                                <h4 class="text-2xl font-semibold text-gray-800 mb-3">First Expansion</h4>
-                                <p class="text-gray-600 text-lg">Leading the industry with sustainable media practices and next-generation creative solutions.</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center justify-center" style="width:200px;">
-                            <div class="relative flex flex-col items-center justify-center">
-                                <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
-                                    <img src="HomePhoto.svg" alt="2025 Expansion" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-1/2 pl-8"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Timeline Wrapper -->
+    <div class="relative flex flex-col items-center">
+  <!-- Main Vertical Line (only between circles) -->
+  <div class="absolute top-[160px] bottom-[160px] left-1/2 w-1 bg-gray-200 -z-10"></div>
+
+  <!-- Timeline Item (Left) -->
+  <div class="timeline-item relative flex items-center w-full">
+    <!-- Left Content -->
+    <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl">
+        <h3 class="text-2xl font-bold text-brand-red mb-2">2009-2011</h3>
+        <h4 class="text-2xl font-semibold text-gray-800 mb-3">Our Humble Beginnings</h4>
+        <p class="text-gray-600 text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+        </p>
+      </div>
+    </div>
+
+    <!-- Circle -->
+    <div class="flex flex-col items-center justify-center relative" style="width:200px;">
+      <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
+        <img src="HomePhoto.svg" alt="Humble Beginnings" class="rounded-full w-[148px] h-[148px] object-cover block">
+      </div>
+    </div>
+
+    <!-- Right Spacer -->
+    <div class="w-1/2 pl-8"></div>
+  </div>
+
+  <!-- Timeline Item (Right) -->
+  <div class="timeline-item relative flex items-center w-full">
+    <!-- Left Spacer -->
+    <div class="w-1/2 pr-8"></div>
+
+    <!-- Circle -->
+    <div class="flex flex-col items-center justify-center relative" style="width:200px;">
+      <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
+        <img src="HomePhoto.svg" alt="Agency Born" class="rounded-full w-[148px] h-[148px] object-cover block">
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="w-1/2 pl-8 animate-slide-up flex flex-col items-start justify-center">
+      <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
+        <h3 class="text-2xl font-bold text-brand-red mb-2">March 2011</h3>
+        <h4 class="text-2xl font-semibold text-gray-800 mb-3">An Agency is Born</h4>
+        <p class="text-gray-600 text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline Item (Left, Last One) -->
+  <div class="timeline-item relative flex items-center w-full">
+    <!-- Left Content -->
+    <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
+      <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
+        <h3 class="text-2xl font-bold text-brand-red mb-2">2025</h3>
+        <h4 class="text-2xl font-semibold text-gray-800 mb-3">First Expansion</h4>
+        <p class="text-gray-600 text-lg">
+          Leading the industry with sustainable media practices and next-generation creative solutions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Circle -->
+    <div class="flex flex-col items-center justify-center relative" style="width:200px;">
+      <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
+        <img src="HomePhoto.svg" alt="2025 Expansion" class="rounded-full w-[148px] h-[148px] object-cover block">
+      </div>
+    </div>
+
+    <!-- Right Spacer -->
+    <div class="w-1/2 pl-8"></div>
+  </div>
+</div>
+
+</section>
+
 
         <!-- Values Section -->
         <section class="py-20 bg-gray-50">
