@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
+    <link rel="icon" href="LogoMedia.png" type="image/png">
     <script>
         tailwind.config = {
             theme: {
@@ -215,7 +215,7 @@
 </head>
 <body class="bg-white">
     <!-- Navbar -->
-    <nav class="navbar-fixed glass-effect border-b border-gray-200">
+    <nav class="fixed top-0 left-0 w-full glass-effect border-b border-gray-200 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <div class="flex-shrink-0">
@@ -242,163 +242,128 @@
 </nav>
 
     <!-- Home Page -->
-    <div id="home" class="page active">
-        <!-- Hero Section -->
-        <!-- Hero with Slideshow Background -->
-        <div class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        <iframe src="animation_slideshow.html"
-                class="block w-screen h-[80vh] border-0"
-                style="min-height:570px; margin:0; padding:0;"
-                loading="lazy">
-        </iframe>
-        </div>
+<div id="home" class="page active pt-20"> <!-- pt-20 = padding-top: 5rem (80px) -->
+  <!-- Hero Section -->
+  <div class="relative w-full overflow-hidden">
+    <video 
+        src="MapsVideo.mp4" 
+        class="w-full"
+        autoplay 
+        muted 
+        loop 
+        playsinline>
+    </video>
+  </div>
+
+
             
         <!-- About Us Preview -->
          <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            
-            <!-- Judul -->
-            <div class="mb-16 animate-fade-in">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <!-- Judul -->
+        <div class="mb-16 animate-fade-in">
             <h2 class="text-4xl font-bold text-brand-red mb-6">About PT. Media Mandiri</h2>
-            <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
+            <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8 rounded"></div>
             <p class="text-gray-600 mb-6 text-lg leading-relaxed max-w-3xl mx-auto" style="font-family: Helvetica, Arial, sans-serif;">
                 Founded in 1997, Media Mandiri is a trusted media company in Indonesia. 
                 We connect global and local media with clients, supported by a professional 
                 team with extensive industry experience.
             </p>
-            </div>
-
-            <!-- Counter Cards sejajar -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            
-            <!-- Card 1 -->
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <!-- Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.1 0-2 .9-2 2v10h4V10c0-1.1-.9-2-2-2zM6 20h12M4 4h16v4H4V4z" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                    <span class="counter years-big" data-target="28">0</span>
-                                    <span class="counter plus-symbol mx-1">+</span>
-                                    <span class="years-big">years</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                Experience as a trusted media representative since 1997
-                </p>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5V4H2v16h5m10 0v-6H7v6m10 0H7" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                    <span class="counter years-big" data-target="100">0</span>
-                                    <span class="counter plus-symbol mx-1">+</span>
-                                    <span class="years-big">Clients</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                From diverse industries across Indonesia and abroad
-                </p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h5V9H4v8h5z" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                    <span class="counter years-big" data-target="10">0</span>
-                                    <span class="counter plus-symbol mx-1">+</span>
-                                    <span class="years-big">industries</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                Serving sectors from finance, lifestyle, to government
-                </p>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0V3m0 4v4m-8-4H3m0 0V3m0 4v4m10 10h8m0 0v-4m0 4v4m-8-4H3m0 0v-4m0 4v4" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                      <span class="partnerships-medium">Global</span>
-                                      <span class="partnerships-medium mx-1">partnerships</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                Exclusive representative for top-tier international media
-                </p>
-            </div>
-            </div>
-
-            <!-- Tombol -->
-            <button class="bg-brand-red text-white px-6 py-3 rounded-full hover:bg-red-800 transition-colors duration-300">
-            Learn More About Us
-            </button>
         </div>
-        </section>
+
+        <!-- Counter Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <!-- Card 1 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="28years.svg" alt="2" class="h-30 w-auto">
+    </div>
+</div>
+
+
+    <!-- Card 2 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+            <img src="icon2.png" alt="Clients Icon" class="h-12 w-12 object-contain">
+        </div>
+        <div class="text-2xl font-bold text-brand-red mb-2">
+            <span class="counter" data-target="100">0</span>+ Clients
+        </div>
+        <p class="text-gray-600 text-sm font-medium">
+            From diverse industries across Indonesia and abroad
+        </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+            <img src="icon3.png" alt="Industries Icon" class="h-12 w-12 object-contain">
+        </div>
+        <div class="text-2xl font-bold text-brand-red mb-2">
+            <span class="counter" data-target="10">0</span>+ Industries
+        </div>
+        <p class="text-gray-600 text-sm font-medium">
+            Serving sectors from finance, lifestyle, to government
+        </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+            <img src="icon4.png" alt="Partnerships Icon" class="h-12 w-12 object-contain">
+        </div>
+        <div class="text-2xl font-bold text-brand-red mb-2">
+            Global partnerships
+        </div>
+        <p class="text-gray-600 text-sm font-medium">
+            Exclusive representative for top-tier international media
+        </p>
+    </div>
+</div>
+
+</section>
+
+
 
         <!-- Our Services Preview -->
         <section class="py-20">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold text-brand-red mb-4 font-family:Helvetica font-weight:bold;" >Our Services</h2>
-<p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s; font-family: Helvetica, Arial, sans-serif;">
-    From exclusive media representation to strategic communications, we help brands connect with audiences locally and globally.
-</p>
-<div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl font-bold text-brand-red mb-4 font-family:Helvetica font-weight:bold;">Our Services</h2>
+            <p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s; font-family: Helvetica, Arial, sans-serif;">
+                From exclusive media representation to strategic communications, we help brands connect with audiences locally and globally.
+            </p>
+            <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+        </div>
 
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Media Representatives -->
+            <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 animate-scale-in">
+                <div class="text-4xl text-brand-red mb-6">
+                    <i class="fas fa-users"></i> <!-- Icon people/network -->
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 animate-scale-in">
-                        <div class="text-4xl text-brand-red mb-6">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Broadcast</h3>
-                        <p class="text-gray-600">
-                            Innovative visual designs that capture your brand essence and engage your audience effectively.
-                        </p>
-                    </div>
-                    <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 animate-scale-in" style="animation-delay: 0.1s;">
-                        <div class="text-4xl text-brand-red mb-6">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Printed</h3>
-                        <p class="text-gray-600">
-                            Professional video content creation from concept to final production for all platforms.
-                        </p>
-                    </div>
-                    <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 animate-scale-in" style="animation-delay: 0.2s;">
-                        <div class="text-4xl text-brand-red mb-6">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Digital</h3>
-                        <p class="text-gray-600">
-                            Strategic digital campaigns that maximize your reach and drive meaningful engagement.
-                        </p>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4"></h3>
-                        <class="text-xl font-bold text-gray-800 mb-4"></h3>
-                    </div>
-                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Media Representatives</h3>
+                <p class="text-gray-600">
+                    Representing your brand across multiple media channels, ensuring maximum visibility and professional handling of media relations.
+                </p>
             </div>
-        </section>
+
+            <!-- Strategic Communications -->
+            <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 animate-scale-in" style="animation-delay: 0.1s;">
+                <div class="text-4xl text-brand-red mb-6">
+                    <i class="fas fa-bullseye"></i> <!-- Icon target/strategy -->
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Strategic Communications</h3>
+                <p class="text-gray-600">
+                    Crafting tailored communication strategies that strengthen your brand message, engage audiences, and drive impactful results.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- Premium Media Brands -->
         <section class="py-20">
@@ -470,7 +435,32 @@
     <!-- About Us Page -->
     <div id="about" class="page">
         <!-- Hero Section -->
-             <section class="py-20 bg-gray-50">
+        <div class="w-full h-[60vh] relative overflow-hidden">
+  <img src="Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showNextSlide() {
+  slides[current].classList.remove('opacity-100');
+  slides[current].classList.add('opacity-0');
+
+  current = (current + 1) % slides.length;
+
+  slides[current].classList.remove('opacity-0');
+  slides[current].classList.add('opacity-100');
+}
+
+// Ganti gambar tiap 2 detik
+setInterval(showNextSlide, 2000);
+</script>
+
+
+             <section class="pt py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 text-center">
             
             <!-- Judul -->
@@ -2706,65 +2696,93 @@
         <div class="grid lg:grid-cols-2 gap-12">
             
             <!-- Contact Form -->
-<div class="animate-slide-up">
-  <h2 class="text-3xl font-bold text-brand-red mb-8">Get In Touch</h2>
+<div class="animate-slide-up max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold text-brand-red mb-8 text-center">Get In Touch</h2>
   <form id="contact-form" action="https://formspree.io/f/mrbaglvv" method="POST" class="space-y-6">
-    <div class="grid md:grid-cols-2 gap-6">
-      <div>
-        <label class="block text-gray-700 font-semibold mb-2">Email</label>
-        <input type="email" name="email" required
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                 focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
-          placeholder="email">
+    
+    <!-- Title -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-2">Title</label>
+      <div class="flex gap-4">
+        <label class="flex items-center gap-2">
+          <input type="radio" name="title" value="Mr." required class="accent-brand-red">
+          Mr.
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="title" value="Mrs." class="accent-brand-red">
+          Mrs.
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="title" value="Ms." class="accent-brand-red">
+          Ms.
+        </label>
       </div>
     </div>
 
-    <div>
-      <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
-      <select name="service" required
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-               focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
-        <option value="">Select a service</option>
-        <option value="creative">Creative Design</option>
-        <option value="video">Video Production</option>
-        <option value="digital">Digital Marketing</option>
-        <option value="social">Social Media</option>
-        <option value="events">Event Management</option>
-        <option value="print">Print Media</option>
-      </select>
+    <!-- Name Fields -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">First Name</label>
+        <input type="text" name="first_name" required placeholder="First Name"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                      focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Last Name</label>
+        <input type="text" name="last_name" required placeholder="Last Name"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                      focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+      </div>
     </div>
 
-    <div>
-      <label class="block text-gray-700 font-semibold mb-2">Budget Range</label>
-      <select name="budget" required
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-               focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
-        <option value="">Select budget range</option>
-        <option value="10k-50k">$10,000 - $50,000</option>
-        <option value="50k-100k">$50,000 - $100,000</option>
-        <option value="100k-250k">$100,000 - $250,000</option>
-        <option value="250k+">$250,000+</option>
-      </select>
+    <!-- Email & Company -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+        <input type="email" name="email" required placeholder="Email"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                      focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Company</label>
+        <input type="text" name="company" placeholder="Company"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                      focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+      </div>
     </div>
 
+    <!-- Position & Country -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Position</label>
+        <input type="text" name="position" placeholder="Position"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                      focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Country</label>
+        <input type="text" name="country" placeholder="Country"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                      focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300">
+      </div>
+    </div>
+
+    <!-- Message -->
     <div>
-      <label class="block text-gray-700 font-semibold mb-2">Message *</label>
-      <textarea name="message" rows="6" required
-        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-               focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
-        placeholder="Tell us about your project..."></textarea>
+      <label class="block text-gray-700 font-semibold mb-2">Message</label>
+      <textarea name="message" rows="6" required placeholder="Your message..."
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+                       focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"></textarea>
     </div>
 
     <!-- reCAPTCHA -->
     <div class="g-recaptcha mt-4" data-sitekey="6Ley77UrAAAAAB674iOc7fntrI0wl1DfZBx-CAdK"></div>
-    <p id="captcha-error" class="text-red-600 hidden mt-2">
-      ⚠️ Silakan centang captcha dulu.
-    </p>
+    <p id="captcha-error" class="text-red-600 hidden mt-2">⚠️ Silakan centang captcha dulu.</p>
 
     <!-- Tombol -->
     <button type="submit"
-      class="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold 
-             hover:bg-red-800 transition-colors duration-300 transform hover:scale-105">
+            class="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold 
+                   hover:bg-red-800 transition-colors duration-300 transform hover:scale-105">
       Send Message
     </button>
 
@@ -2773,6 +2791,7 @@
     <p id="form-error" class="text-red-600 hidden mt-4">⚠️ Terjadi kesalahan, coba lagi.</p>
   </form>
 </div>
+
 
 
             <!-- Contact Information -->
@@ -2788,7 +2807,7 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-gray-800 mb-2">Headquarters</h3>
-                                <p class="text-gray-600">Jl. Raya Margonda No. 123<br>Depok, West Java 16424<br>Indonesia</p>
+                                <p class="text-gray-600">Citylofts Sudirman #2507<br>Jl. KH. Mas Mansyur No. 121 - Jakarta,<br>10220, Indonesia</p>
                             </div>
                         </div>
                     </div>
@@ -2801,7 +2820,20 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-gray-800 mb-2">Phone</h3>
-                                <p class="text-gray-600">+62 21 8765 4321<br>+62 812 3456 7890</p>
+                                <p class="text-gray-600"> (+62) 21 - 2970 4008</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fax -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-start">
+                            <div class="bg-brand-red text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-fax text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Fax</h3>
+                                <p class="text-gray-600"> (+62) 21 - 2970 4007</p>
                             </div>
                         </div>
                     </div>
@@ -2814,7 +2846,7 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-gray-800 mb-2">Email</h3>
-                                <p class="text-gray-600">info@mediamandiri.com<br>hello@mediamandiri.com</p>
+                                <p class="text-gray-600">contact@mediaman.co.id</p>
                             </div>
                         </div>
                     </div>
@@ -2979,16 +3011,19 @@ form.addEventListener("submit", async function(event) {
                     <div class="space-y-3">
                         <p class="text-red-100">
                             <i class="fas fa-map-marker-alt mr-2"></i>
-                            Jl. Raya Margonda No. 123<br>
-                            Depok, West Java 16424
+                            Citylofts Sudirman #2507<br>Jl. KH. Mas Mansyur No. 121 - Jakarta,<br>10220, Indonesia</p>
                         </p>
                         <p class="text-red-100">
                             <i class="fas fa-phone mr-2"></i>
-                            +62 21 8765 4321
+                            (+62) 21 - 2970 4008
+                        </p>
+                        <p class="text-red-100">
+                            <i class="fas fa-fax mr-2"></i>
+                            (+62) 21 - 2970 4007
                         </p>
                         <p class="text-red-100">
                             <i class="fas fa-envelope mr-2"></i>
-                            info@mediamandiri.com
+                            contact@mediaman.co.id
                         </p>
                     </div>
                 </div>
