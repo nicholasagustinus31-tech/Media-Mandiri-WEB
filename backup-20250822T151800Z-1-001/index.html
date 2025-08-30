@@ -6,10 +6,8 @@
     <title>PT. Media Mandiri</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="LogoMedia.png" type="image/png">
+    <link rel="icon" href="MediaMandiriLogodll/LogoMedia.png" type="image/png">
     <script>
         tailwind.config = {
             theme: {
@@ -125,53 +123,33 @@
     top: 50%; /* Lingkaran berada di tengah */
     transform: translate(-50%, -50%);
 }
- 
-.timeline {
-  position: relative;
-  margin: 50px auto;
-  padding: 20px 0;
-  width: 80%;
+       /* Keep dots for all timeline items */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #680307;
+    border-radius: 50%;
+    z-index: 10;
 }
 
-/* The vertical line */
-.timeline::before {
-  content: '';
+/* Remove the dot on the very first timeline item */
+.timeline-item:first-child::before {
+    display: none;
+}
+
+.timeline-line {
   position: absolute;
-  top: 0;
+  top: 100px;   /* adjust until it starts exactly at your first circle */
   bottom: 0;
   left: 50%;
-  width: 4px;
-  background: #ccc; /* line color */
   transform: translateX(-50%);
-  z-index: 0;
+  width: 4px;
+  background: #680307;
 }
-
-.timeline-item {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin: 40px 0;
-}
-
-.timeline-item .circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid white;
-  z-index: 1;
-  background: #fff;
-}
-
-.timeline-item .content {
-  width: 40%;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-
 
         .continent-map {
             transition: all 0.3s ease;
@@ -246,7 +224,7 @@
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="home">Home</a>
-          <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="about">Our Journey</a>
+          <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="about">About Us</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="services">Services</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="projects">Clients & Projects</a>
           <a href="#" class="nav-link text-gray-700 hover:text-brand-red px-3 py-2 text-base font-semibold transition-colors duration-300" data-page="markets">Markets</a>
@@ -284,14 +262,19 @@
     <div class="max-w-7xl mx-auto px-4 text-center">
         <!-- Judul -->
         <div class="mb-16 animate-fade-in">
-            <h2 class="text-4xl font-bold text-brand-red mb-6">About PT. Media Mandiri</h2>
-            <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8 rounded"></div>
-            <p class="text-gray-600 mb-6 text-lg leading-relaxed max-w-3xl mx-auto" style="font-family: Helvetica, Arial, sans-serif;">
-                Founded in 1997, Media Mandiri is a trusted media company in Indonesia. 
-                We connect global and local media with clients, supported by a professional 
-                team with extensive industry experience.
-            </p>
-        </div>
+    <h2 class="text-4xl text-brand-red mb-6" 
+        style="font-family: 'HelveticaBrand', sans-serif; font-weight: 700;">
+        About PT. Media Mandiri
+    </h2>
+    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8 rounded"></div>
+    <p class="text-gray-600 mb-6 text-lg leading-relaxed max-w-3xl mx-auto" 
+       style="font-family: 'HelveticaBrand', sans-serif; font-weight: 400;">
+        Founded in 1997, Media Mandiri is a trusted media company in Indonesia. 
+        We connect global and local media with clients, supported by a professional 
+        team with extensive industry experience.
+    </p>
+</div>
+
 
         <!-- Counter Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -306,43 +289,31 @@
 
 
     <!-- Card 2 -->
-    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-        <div class="flex justify-center mb-4">
-            <img src="icon2.png" alt="Clients Icon" class="h-12 w-12 object-contain">
-        </div>
-        <div class="text-2xl font-bold text-brand-red mb-2">
-            <span class="counter" data-target="100">0</span>+ Clients
-        </div>
-        <p class="text-gray-600 text-sm font-medium">
-            From diverse industries across Indonesia and abroad
-        </p>
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/100clients.svg" alt="2" class="h-30 w-auto">
     </div>
+</div>
 
     <!-- Card 3 -->
-    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-        <div class="flex justify-center mb-4">
-            <img src="icon3.png" alt="Industries Icon" class="h-12 w-12 object-contain">
-        </div>
-        <div class="text-2xl font-bold text-brand-red mb-2">
-            <span class="counter" data-target="10">0</span>+ Industries
-        </div>
-        <p class="text-gray-600 text-sm font-medium">
-            Serving sectors from finance, lifestyle, to government
-        </p>
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/10industries.svg" alt="2" class="h-30 w-auto">
     </div>
+</div>
 
     <!-- Card 4 -->
-    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-        <div class="flex justify-center mb-4">
-            <img src="icon4.png" alt="Partnerships Icon" class="h-12 w-12 object-contain">
-        </div>
-        <div class="text-2xl font-bold text-brand-red mb-2">
-            Global partnerships
-        </div>
-        <p class="text-gray-600 text-sm font-medium">
-            Exclusive representative for top-tier international media
-        </p>
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/global.svg" alt="2" class="h-30 w-auto">
     </div>
+</div>
 </div>
 
 </section>
@@ -355,7 +326,7 @@
         <div class="text-center mb-16 animate-fade-in">
             <h2 class="text-4xl font-bold text-brand-red mb-4 font-family:Helvetica font-weight:bold;">Our Services</h2>
             <p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s; font-family: Helvetica, Arial, sans-serif;">
-                From exclusive media representation to strategic communications, we help brands connect with audiences locally and globally.
+                From exclusive media representation to strategic communications,</br> we help brands connect with audiences locally and globally.
             </p>
             <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
         </div>
@@ -399,48 +370,33 @@
                         <div class="slide-container active">
                             <div class="grid md:grid-cols-4 gap-8">
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 1" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">MediaTech Pro</h4>
-                                    <p class="text-gray-600 mt-2">Digital Solutions</p>
+                                    <img src="our clients/INews.png" alt="Brand 1" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 2" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Creative Studio</h4>
-                                    <p class="text-gray-600 mt-2">Design & Branding</p>
+                                    <img src="our clients/CNBC_Indonesia_logo.svg.png" alt="Brand 2" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 3" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Video Masters</h4>
-                                    <p class="text-gray-600 mt-2">Video Production</p>
+                                    <img src="our clients/cnn-indonesia-logo-png_seeklogo-520453.png" alt="Brand 3" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 4" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Marketing Plus</h4>
-                                    <p class="text-gray-600 mt-2">Digital Marketing</p>
+                                    <img src="our clients/kompas.png" alt="Brand 4" class="mx-auto mb-4 max-h-24 object-contain">
+
                                 </div>
                             </div>
                         </div>
                         <div class="slide-container">
                             <div class="grid md:grid-cols-4 gap-8">
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 5" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Social Boost</h4>
-                                    <p class="text-gray-600 mt-2">Social Media</p>
+                                    <img src="our clients/detik.png" alt="Brand 5" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 6" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Event Pro</h4>
-                                    <p class="text-gray-600 mt-2">Event Management</p>
+                                    <img src="our clients/bisnis indonesia.png" alt="Brand 6" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 7" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Print Excellence</h4>
-                                    <p class="text-gray-600 mt-2">Print Media</p>
+                                    <img src="our clients/BTV_(Indonesia)_logo.svg.png" alt="Brand 7" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                                 <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-scale">
-                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Brand 8" class="w-24 h-24 mx-auto mb-4 rounded-full object-cover">
-                                    <h4 class="font-bold text-gray-800">Analytics Hub</h4>
-                                    <p class="text-gray-600 mt-2">Data Analytics</p>
+                                    <img src="our clients/icon-hut-rm-ke-25-Photoroom.png" alt="Brand 8" class="mx-auto mb-4 max-h-24 object-contain">
                                 </div>
                             </div>
                         </div>
@@ -458,34 +414,34 @@
     <div id="about" class="page">
         <!-- Hero Section -->
         <div class="w-full h-[60vh] relative overflow-hidden">
-  <img src="billboard/Billboard5.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
   <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
-  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
 </div>
 
 <script>
-const slides = document.querySelectorAll('.slide');
-let current = 0;
+const aboutSlides = document.querySelectorAll('.slide');
+let aboutCurrent = 0;
 
-function showNextSlide() {
-  slides[current].classList.remove('opacity-100');
-  slides[current].classList.add('opacity-0');
+function showNextAboutSlide() {
+  aboutSlides[aboutCurrent].classList.remove('opacity-100');
+  aboutSlides[aboutCurrent].classList.add('opacity-0');
 
-  current = (current + 1) % slides.length;
+  aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
 
-  slides[current].classList.remove('opacity-0');
-  slides[current].classList.add('opacity-100');
+  aboutSlides[aboutCurrent].classList.remove('opacity-0');
+  aboutSlides[aboutCurrent].classList.add('opacity-100');
 }
 
 // Ganti gambar tiap 2 detik
-setInterval(showNextSlide, 2000);
+setInterval(showNextAboutSlide, 2000);
 </script>
 
 
              <section class="pt py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 text-center">
-           
-            <!-- Judul 
+            
+            <!-- Judul -->
             <div class="mb-16 animate-fade-in">
             <h2 class="text-4xl font-bold text-brand-red mb-6">About PT. Media Mandiri</h2>
             <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
@@ -494,185 +450,121 @@ setInterval(showNextSlide, 2000);
                 We connect global and local media with clients, supported by a professional 
                 team with extensive industry experience.
             </p>
-            </div> -->
-
-            <!-- Counter Cards sejajar 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"> 
-
-        
-            <div class="counter-card">
-                <div class="flex justify-center mb-3"> -->
-                <!-- Icon 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.1 0-2 .9-2 2v10h4V10c0-1.1-.9-2-2-2zM6 20h12M4 4h16v4H4V4z" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                    <span class="counter years-big" data-target="28">0</span>
-                                    <span class="plus-symbol years-big mx-1">+</span>
-                                    <span class="years-big">years</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                Experience as a trusted media representative since 1997
-                </p>
-            </div> -->
-
-            <!-- Card 2 
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5V4H2v16h5m10 0v-6H7v6m10 0H7" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                    <span class="counter years-big" data-target="100">0</span>
-                                    <span class="plus-symbol years-big mx-1">+</span>
-                                    <span class="years-big">Clients</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                From diverse industries across Indonesia and abroad
-                </p>
-            </div> -->
-
-            <!-- Card 3 
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h5V9H4v8h5z" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                    <span class="counter years-big" data-target="10">0</span>
-                                    <span class="plus-symbol years-big mx-1">+</span>
-                                    <span class="years-big">industries</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                Serving sectors from finance, lifestyle, to government
-                </p>
-            </div> -->
-
-            <!-- Card 4 
-            <div class="counter-card">
-                <div class="flex justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0V3m0 4v4m-8-4H3m0 0V3m0 4v4m10 10h8m0 0v-4m0 4v4m-8-4H3m0 0v-4m0 4v4" />
-                </svg>
-                </div>
-                <div class="text-lg font-bold text-brand-red mb-2">
-                                <div class="flex items-center justify-center">
-                                      <span class="partnerships-medium">Global</span>
-                                      <span class="partnerships-medium mx-1">partnerships</span>
-                                </div>
-                </div>
-                <p class="text-gray-600 font-medium">
-                Exclusive representative for top-tier international media
-                </p>
             </div>
-            </div> -->
 
-            <!-- Tombol 
-            <button class="bg-brand-red text-white px-6 py-3 rounded-full hover:bg-red-800 transition-colors duration-300">
-            Learn More About Us
-            </button>
-        </div> -->
+            <!-- Counter Cards sejajar -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Card 1 -->
+            <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/28years.svg" alt="2" class="h-30 w-auto">
+    </div>
+</div>
+
+
+    <!-- Card 2 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/100clients.svg" alt="2" class="h-30 w-auto">
+    </div>
+</div>
+
+    <!-- Card 3 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/10industries.svg" alt="2" class="h-30 w-auto">
+    </div>
+</div>
+
+    <!-- Card 4 -->
+    <div class="counter-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center">
+    
+    <!-- Counter dengan gambar angka -->
+    <div class="flex justify-center mb-1">
+        <img src="AboutUSpreview/global.svg" alt="2" class="h-30 w-auto">
+    </div>
+</div>
+        </div>
         </section>
 
 
         <!-- Timeline Section -->
         <section class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <!-- Section Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-brand-red mb-6">Our Journey</h2>
-      <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
-    </div>
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-brand-red mb-6">Our Journey</h2>
+                    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
+                </div>
+                <div class="relative flex flex-col gap-16">
+                    <div class="timeline-line"></div>
+                    <div class="space-y-16">
+                        <!-- Left box -->
+                        <div class="timeline-item relative flex items-center">
+                            <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
+                                <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl">
+                                    <h3 class="text-2xl font-bold text-brand-red mb-2">2009-2011</h3>
+                                    <h4 class="text-2xl font-semibold text-gray-800 mb-3">Our Humble Beginnings</h4>
+                                    <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center justify-center" style="width:200px;">
+                                <div class="relative flex flex-col items-center justify-center">
+                                    <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
+                                        <img src="billboard/Billboard2.svg" alt="Humble Beginnings" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                    </div>
+                    
+                   <!-- Right box -->
+                   <div class="timeline-item relative flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="flex flex-col items-center justify-center" style="width:200px;">
+                            <div class="relative flex flex-col items-center justify-center">
+                                <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
+                                    <img src="billboard/Billboard3.svg" alt="Agency Born" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-8 animate-slide-up flex flex-col items-start justify-center">
+                            <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
+                                <h3 class="text-2xl font-bold text-brand-red mb-2">March 2011</h3>
+                                <h4 class="text-2xl font-semibold text-gray-800 mb-3">An Agency is Born</h4>
+                                <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Timeline Wrapper -->
-    <div class="relative flex flex-col items-center">
-  <!-- Main Vertical Line (only between circles) -->
-  <div class="absolute top-[160px] bottom-[160px] left-1/2 w-1 -z-10" style="background-color:#680307;"></div>
-
-  <!-- Timeline Item (Left) -->
-  <div class="timeline-item relative flex items-center w-full">
-    <!-- Left Content -->
-    <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
-      <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl">
-        <h3 class="text-2xl font-bold text-brand-red mb-2">2009-2011</h3>
-        <h4 class="text-2xl font-semibold text-gray-800 mb-3">Our Humble Beginnings</h4>
-        <p class="text-gray-600 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-        </p>
-      </div>
-    </div>
-
-    <!-- Circle -->
-    <div class="flex flex-col items-center justify-center relative" style="width:200px;">
-      <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;border:4px solid #680307;">
-        <img src="HomePhoto.svg" alt="Humble Beginnings" class="rounded-full w-[148px] h-[148px] object-cover block">
-      </div>
-    </div>
-
-    <!-- Right Spacer -->
-    <div class="w-1/2 pl-8"></div>
-  </div>
-
-  <!-- Timeline Item (Right) -->
-  <div class="timeline-item relative flex items-center w-full">
-    <!-- Left Spacer -->
-    <div class="w-1/2 pr-8"></div>
-
-    <!-- Circle -->
-    <div class="flex flex-col items-center justify-center relative" style="width:200px;">
-      <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;border:4px solid #680307;">
-        <img src="HomePhoto.svg" alt="Agency Born" class="rounded-full w-[148px] h-[148px] object-cover block">
-      </div>
-    </div>
-
-    <!-- Right Content -->
-    <div class="w-1/2 pl-8 animate-slide-up flex flex-col items-start justify-center">
-      <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
-        <h3 class="text-2xl font-bold text-brand-red mb-2">March 2011</h3>
-        <h4 class="text-2xl font-semibold text-gray-800 mb-3">An Agency is Born</h4>
-        <p class="text-gray-600 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Timeline Item (Left, Last One) -->
-  <div class="timeline-item relative flex items-center w-full">
-    <!-- Left Content -->
-    <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
-      <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
-        <h3 class="text-2xl font-bold text-brand-red mb-2">2025</h3>
-        <h4 class="text-2xl font-semibold text-gray-800 mb-3">First Expansion</h4>
-        <p class="text-gray-600 text-lg">
-          Leading the industry with sustainable media practices and next-generation creative solutions.
-        </p>
-      </div>
-    </div>
-
-    <!-- Circle -->
-    <div class="flex flex-col items-center justify-center relative" style="width:200px;">
-      <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;border:4px solid #680307;">
-        <img src="HomePhoto.svg" alt="2025 Expansion" class="rounded-full w-[148px] h-[148px] object-cover block">
-      </div>
-    </div>
-
-    <!-- Right Spacer -->
-    <div class="w-1/2 pl-8"></div>
-  </div>
-</div>
-
-</section>
-
+                    
+                   <!-- Left box -->
+                   <div class="timeline-item relative flex items-center">
+                        <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
+                            <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
+                                <h3 class="text-2xl font-bold text-brand-red mb-2">2025</h3>
+                                <h4 class="text-2xl font-semibold text-gray-800 mb-3">First Expansion</h4>
+                                <p class="text-gray-600 text-lg">Leading the industry with sustainable media practices and next-generation creative solutions.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center" style="width:200px;">
+                            <div class="relative flex flex-col items-center justify-center">
+                                <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
+                                    <img src="billboard/Billboard5.svg" alt="2025 Expansion" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Values Section -->
         <section class="py-20 bg-gray-50">
@@ -711,9 +603,31 @@ setInterval(showNextSlide, 2000);
     <!-- Services Page -->
     <div id="services" class="page">
         <!-- Hero Section -->
-        <div class="w-full h-[60vh]">
-            <img src="HomePhoto.svg" alt="Hero Image" class="w-full h-full object-cover" loading="lazy">
-        </div>
+        <div class="w-full h-[60vh] relative overflow-hidden">
+  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+</div>
+
+<script>
+const serviceSlides = document.querySelectorAll('.slide');
+let serviceCurrent = 0;
+
+function showNextAboutSlide() {
+  aboutSlides[aboutCurrent].classList.remove('opacity-100');
+  aboutSlides[aboutCurrent].classList.add('opacity-0');
+
+  aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+
+  aboutSlides[aboutCurrent].classList.remove('opacity-0');
+  aboutSlides[aboutCurrent].classList.add('opacity-100');
+}
+
+// Ganti gambar tiap 2 detik
+setInterval(showNextAboutSlide, 2000);
+</script>
+
+
 
         <!-- Services Categories -->
         <section class="py-20">
@@ -829,165 +743,71 @@ setInterval(showNextSlide, 2000);
     <!-- Projects Page -->
     <div id="projects" class="page">
         <!-- Hero Section -->
-       <div class="w-full h-[60vh]">
-            <img src="HomePhoto.svg" alt="Hero Image" class="w-full h-full object-cover" loading="lazy">
-        </div>
-    
-    <br><br><br>
-    <!-- Client Logos Section -->
-    <section class="h-[60vh] bg-gray-50 relative overflow-hidden flex flex-col justify-center">
-      <div class="text-center mb-6"> 
-        <br><br>
-        <h2 class="text-4xl font-bold text-brand-red mb-4">Our Clients</h2>
-        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
-    </div>
-    <br>
-    <!-- Swiper -->
-    <div class="relative w-full mt-8">
-        <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <!-- Ulangi 27 logo di sini -->
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/bisnis indonesia.png" alt="Client 1" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/BTV_(Indonesia)_logo.svg.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/CNBC_Indonesia_logo.svg.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/cnn-indonesia-logo-png_seeklogo-520453.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/detik.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/icon-hut-rm-ke-25-Photoroom.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/IDN_Logo.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/INews.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/investor.id.webp" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/jawa pos.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/katadata.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/kompas.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/KOMPAS_TV_(2017).svg.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/kumparan.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/liputan 6.webp" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/logo-og-google-Photoroom.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/Logo-sindonews.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/Media_Indonesia.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/merdeka.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/metro tv.webp" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/republika.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/suara.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/tempo.webp" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/THIS.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/tribunnews.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-            <div class="swiper-slide">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/tvone.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                <img src="../backup-20250822T151800Z-1-001/our clients/Viva.co.id_(2018).svg.png" alt="Client 2" class="mx-auto w-40 h-24 object-contain" />
-            </div>
-            </div>
-        </div>
+       <div class="w-full h-[60vh] relative overflow-hidden">
+  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+</div>
 
-        <!-- Tombol Navigasi -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        </div>
-    </div>
-    </section>
+<script>
+const projectSlides = document.querySelectorAll('.slide');
+let projectCurrent = 0;
+
+function showNextAboutSlide() {
+  aboutSlides[aboutCurrent].classList.remove('opacity-100');
+  aboutSlides[aboutCurrent].classList.add('opacity-0');
+
+  aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+
+  aboutSlides[aboutCurrent].classList.remove('opacity-0');
+  aboutSlides[aboutCurrent].classList.add('opacity-100');
+}
+
+// Ganti gambar tiap 2 detik
+setInterval(showNextAboutSlide, 2000);
+</script>
+
+
+        <!-- Project Statistics -->
+        <section class="py-20 bg-gray-50">
+            <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-4xl font-bold text-brand-red mb-4">Clients & Projects</h2>
+<p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+    Transforming brands through innovative media solutions across international markets
+</p>
+<div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+
+                </div>
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-scale-in">
+                        <div class="project-counter text-4xl font-bold text-brand-red mb-2" data-target="28">0</div>
+                        <h3 class="text-lg font-semibold text-gray-800">Experience as a trusted media representative since 1997</h3>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-scale-in">
+                        <div class="project-counter text-4xl font-bold text-brand-red mb-2" data-target="100">0</div>
+                        <h3 class="text-lg font-semibold text-gray-800">From diverse industries across Indonesia and abroad</h3>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-scale-in" style="animation-delay: 0.1s;">
+                        <div class="project-counter text-4xl font-bold text-brand-red mb-2" data-target="10">0</div>
+                        <h3 class="text-lg font-semibold text-gray-800">Serving sectors from finance, lifestyle, to government</h3>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-scale-in" style="animation-delay: 0.1s;">
+                        <div class="project-counter text-4xl font-bold text-brand-red mb-2" data-target="150">0</div>
+                        <h3 class="text-lg font-semibold text-gray-800">Exclusive representative for top-tier international media</h3>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-scale-in" style="animation-delay: 0.2s;">
+                        <div class="project-counter text-4xl font-bold text-brand-red mb-2" data-target="12">0</div>
+                        <h3 class="text-lg font-semibold text-gray-800">Service Categories</h3>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-scale-in" style="animation-delay: 0.3s;">
+                        <div class="project-counter text-4xl font-bold text-brand-red mb-2" data-target="25">0</div>
+                        <h3 class="text-lg font-semibold text-gray-800">Awards Won</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Project Filters -->
         <section class="py-20">
@@ -1006,13 +826,12 @@ setInterval(showNextSlide, 2000);
 
                 <!-- Project Grid -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-    <!--Pertamina--> 
+    <!-- Creative Design Projects -->
     <a href="https://edition.cnn.com/sponsor/edition/pertamina/indonesia-energy-transition" target="_blank" class="block">
         <div class="project-item creative bg-white rounded-xl shadow-lg overflow-hidden hover-scale h-full flex flex-col">
-    <img src="Featured Projects img/pertamina.webp" alt="Brand Identity" class="w-full h-48 object-cover" class="logo">
+    <img src="pertamina.webp" alt="Brand Identity" class="w-full h-48 object-cover" class="logo">
     <div class="p-6 flex flex-col h-full">
-        <img src="Featured Projects img/CNN.svg.png" alt="CNN Logo" class="w-16 h-8 object-contain mx-auto mb-4">
+        <img src="CNN.svg.png" alt="CNN Logo" class="w-16 h-8 object-contain mx-auto mb-4">
         <p class="text-gray-600 mb-4 text-justify flex-grow">
            CNN, or Cable News Network, is a leading global news organization providing 24/7 coverage of breaking news, politics, business, technology, entertainment, and international events. Renowned for its reliable journalism and worldwide reach, CNN delivers news through television, digital platforms, and various media outlets. With a commitment to accuracy and comprehensive reporting, CNN has become a trusted source for up-to-the-minute news and analysis on a diverse range of topics.
 
@@ -1032,9 +851,9 @@ setInterval(showNextSlide, 2000);
     <!-- National Geographic -->
     <a href="https://www.nationalgeographic.com/" target="_blank" class="block">
         <div class="project-item creative bg-white rounded-xl shadow-lg overflow-hidden hover-scale h-full flex flex-col">
-    <img src="Featured Projects img/hiu.jpg" alt="Digital Campaign" class="w-full h-48 object-cover object-contain bg-white" class="logo">
+    <img src="hiu.jpg" alt="Digital Campaign" class="w-full h-48 object-cover object-contain bg-white" class="logo">
     <div class="p-6 flex flex-col h-full">
-        <img src="Featured Projects img/National-Geographic-Logo.svg.png" alt="National Geographic Logo" class="w-25 h-10 object-contain mx-auto mb-4">
+        <img src="National-Geographic-Logo.svg.png" alt="National Geographic Logo" class="w-25 h-10 object-contain mx-auto mb-4">
         <p class="text-gray-600 mb-4 text-justify flex-grow">
           National Geographic Media is a global platform known for its high-quality storytelling in science, exploration, nature, and culture. Through its magazine, television channels, digital content, and photography, it educates and inspires audiences around the world. As part of its mission, it also supports research and conservation efforts through the National Geographic Society.
 
@@ -1052,9 +871,9 @@ setInterval(showNextSlide, 2000);
     <!-- Nikkei -->
     <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
         <a href="https://nikkeiforum.com/indonesia22" target="_blank" class="block">
-            <img src="Featured Projects img/nikkei.jpg" alt="Digital Campaign" class="w-full h-48 object-contain bg-white object-cover class="logo">
+            <img src="nikkei.jpg" alt="Digital Campaign" class="w-full h-48 object-contain bg-white object-cover class="logo">
             <div class="p-6">
-                <img src="Featured Projects img/Nikkei_Logo.svg.png" alt="Nikkei Logo" class="w- h-10 object-contain mx-auto mb-4">
+                <img src="Nikkei_Logo.svg.png" alt="Nikkei Logo" class="w- h-10 object-contain mx-auto mb-4">
                 <p class="text-gray-600 mb-4 text-justify">
                     The Nikkei is Japan's leading financial newspaper and one of the world's most prominent financial dailies. It offers in-depth coverage of the Japanese and global economies, including stock market trends, corporate news, and economic analysis. Renowned for its detailed reporting and insightful commentary, The Nikkei serves as a critical resource for investors, business leaders, and policymakers seeking up-to-date information on financial and economic developments.
                 </p>
@@ -1071,9 +890,9 @@ setInterval(showNextSlide, 2000);
     <!-- Warner Bros -->
     <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
         <a href="https://www.wbd.com/" target="_blank" class="block">
-            <img src="Featured Projects img/WBD.webp" alt="Digital Campaign" class="w-full h-48 object-contain bg-white object-cover class="logo">
+            <img src="WBD.webp" alt="Digital Campaign" class="w-full h-48 object-contain bg-white object-cover class="logo">
             <div class="p-6">
-                <img src="Featured Projects img/Warner_Bros._Discovery.svg.png" alt="Nikkei Logo" class="w- h-10 object-contain mx-auto mb-4">
+                <img src="Warner_Bros._Discovery.svg.png" alt="Nikkei Logo" class="w- h-10 object-contain mx-auto mb-4">
                 <p class="text-gray-600 mb-4 text-justify">
                    Warner Bros. Discovery is a leading global media and entertainment company formed in 2022 through the merger of WarnerMedia and Discovery, Inc. It encompasses renowned brands and assets such as HBO, Warner Bros. Pictures, DC Studios, CNN, Discovery Channel, HGTV, and Max (formerly HBO Max), delivering content across streaming, television, film, news, and gaming. Operating in over 220 countries and 50 languages, the company serves diverse audiences worldwide.
                 </p>
@@ -1091,12 +910,12 @@ setInterval(showNextSlide, 2000);
  <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale flex flex-col">
     <a href="https://www.bloomberg.com/asia" target="_blank" class="flex flex-col h-full">
         <!-- Top Image -->
-        <img src="Featured Projects img/Bloomberg_Terminal_Museum.jpg" alt="Digital Campaign" 
+        <img src="Bloomberg_Terminal_Museum.jpg" alt="Digital Campaign" 
              class="w-full h-48 object-cover bg-white logo">
 
         <!-- Card Content -->
         <div class="p-6 flex flex-col flex-grow">
-            <img src="Featured Projects img/Bloomberg-Logo.png" alt="bloomberg" class="h-12 object-contain mx-auto mb-4">
+            <img src="Bloomberg-Logo.png" alt="bloomberg" class="h-12 object-contain mx-auto mb-4">
 
             <p class="text-gray-600 mb-4 text-justify flex-grow">
               Bloomberg Media is global financial and media company provides a wide range of news, analysis, and insights across various platforms, including television, radio, print, and digital. Bloomberg Live is a platform that delivers live events, webinars, and virtual conferences featuring business leaders, policymakers, and industry experts.
@@ -1118,12 +937,12 @@ setInterval(showNextSlide, 2000);
    <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale flex flex-col">
     <a href="https://www.ft.com/" target="_blank" class="flex flex-col h-full">
         <!-- Top Image -->
-        <img src="Featured Projects img/magz.jpg" alt="Digital Campaign" 
+        <img src="magz.jpg" alt="Digital Campaign" 
              class="w-full h-48 object-cover bg-white logo">
 
         <!-- Card Content -->
         <div class="p-6 flex flex-col flex-grow">
-            <img src="Featured Projects img/FT.png" alt="Financial Times" class="h-12 object-contain mx-auto mb-4">
+            <img src="FT.png" alt="Financial Times" class="h-12 object-contain mx-auto mb-4">
 
             <p class="text-gray-600 mb-4 text-justify flex-grow">
                 The Financial Times newspaper is a renowned international publication known for its comprehensive coverage of global financial and economic news, analysis, and commentary. It provides insights into markets, business trends, politics, and finance, catering to professionals, investors, and decision-makers worldwide.
@@ -1144,12 +963,12 @@ setInterval(showNextSlide, 2000);
         <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale flex flex-col">
     <a href="https://www.france24.com/en/" target="_blank" class="flex flex-col h-full">
         <!-- Top Image -->
-        <img src="Featured Projects img/fr24.jpg" alt="Digital Campaign" 
+        <img src="fr24.jpg" alt="Digital Campaign" 
              class="w-full h-48 object-cover bg-white logo">
 
         <!-- Card Content -->
         <div class="p-6 flex flex-col flex-grow">
-            <img src="Featured Projects img/f24logo.png" alt="Financial Times" class="h-12 object-contain mx-auto mb-4">
+            <img src="f24logo.png" alt="Financial Times" class="h-12 object-contain mx-auto mb-4">
 
             <p class="text-gray-600 mb-4 text-justify flex-grow">
                 France 24 is a French international news network broadcasting 24/7 in French, English, Arabic, and Spanish. Launched in 2006, it offers a French perspective on global news, culture, and debates. Owned by France Médias Monde, it reaches audiences worldwide via satellite, cable, and online platforms.
@@ -1169,12 +988,12 @@ setInterval(showNextSlide, 2000);
      <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale flex flex-col">
     <a href="https://www.dw.com/en/live-tv/channel-english" target="_blank" class="flex flex-col h-full">
         <!-- Top Image -->
-        <img src="Featured Projects img/dwtv.webp" alt="Digital Campaign" 
+        <img src="dwtv.webp" alt="Digital Campaign" 
              class="w-full h-48 object-cover bg-white logo">
 
         <!-- Card Content -->
         <div class="p-6 flex flex-col flex-grow">
-            <img src="Featured Projects img/dwtvpng.png" alt="Financial Times" class="h-12 object-contain mx-auto mb-4">
+            <img src="dwtvpng.png" alt="Financial Times" class="h-12 object-contain mx-auto mb-4">
 
             <p class="text-gray-600 mb-4 text-justify flex-grow">
                 DW-TV (Deutsche Welle Television) is Germany’s international broadcaster, offering independent news and information in multiple languages, including English, German, Spanish, and Arabic. Launched in 1992, it aims to present Germany to the world and promote cross-cultural understanding through news, documentaries, and analysis on politics, culture, and science. It is available globally via satellite, cable, and online.
@@ -1194,12 +1013,12 @@ setInterval(showNextSlide, 2000);
      <div class="project-item digital bg-white rounded-xl shadow-lg overflow-hidden hover-scale flex flex-col">
     <a href="https://www.outlastse.com/" target="_blank" class="flex flex-col h-full">
         <!-- Top Image -->
-        <img src="Featured Projects img/bb.jpg" alt="Digital Campaign" 
+        <img src="bb.jpg" alt="Digital Campaign" 
              class="w-full h-48 object-cover bg-white logo">
 
         <!-- Card Content -->
         <div class="p-6 flex flex-col flex-grow">
-            <img src="Featured Projects img/outlastpng.png" alt="Outlast Logo" class="h-12 object-contain mx-auto mb-4">
+            <img src="outlastpng.png" alt="Outlast Logo" class="h-12 object-contain mx-auto mb-4">
             <p class="text-gray-600 mb-4 text-justify flex-grow">
                 Outlast is a sports marketing and media rights agency offering tailored solutions to boost brand exposure through sports and entertainment. Its services include media rights, sponsorship, event management, and talent representation.
            
@@ -1222,9 +1041,29 @@ setInterval(showNextSlide, 2000);
     <!-- Markets Page -->
     <div id="markets" class="page">
         <!-- Hero Section -->
-       <div class="w-full h-[60vh]">
-            <img src="HomePhoto.svg" alt="Hero Image" class="w-full h-full object-cover" loading="lazy">
-        </div>
+       <div class="w-full h-[60vh] relative overflow-hidden">
+  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+</div>
+
+<script>
+const marketsSlides = document.querySelectorAll('.slide');
+let marketsCurrent = 0;
+
+function showNextAboutSlide() {
+  aboutSlides[aboutCurrent].classList.remove('opacity-100');
+  aboutSlides[aboutCurrent].classList.add('opacity-0');
+
+  aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+
+  aboutSlides[aboutCurrent].classList.remove('opacity-0');
+  aboutSlides[aboutCurrent].classList.add('opacity-100');
+}
+
+// Ganti gambar tiap 2 detik
+setInterval(showNextAboutSlide, 2000);
+</script>
 
         <!-- Interactive World Map -->
         <section class="py-20">
@@ -2596,9 +2435,29 @@ setInterval(showNextSlide, 2000);
     <!-- Peoples Page -->
     <div id="peoples" class="page">
         <!-- Hero Section -->
-        <div class="w-full h-[60vh]">
-            <img src="HomePhoto.svg" alt="Hero Image" class="w-full h-full object-cover" loading="lazy">
-        </div>
+        <div class="w-full h-[60vh] relative overflow-hidden">
+  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+</div>
+
+<script>
+const peopleSlides = document.querySelectorAll('.slide');
+let peopleCurrent = 0;
+
+function showNextAboutSlide() {
+  aboutSlides[aboutCurrent].classList.remove('opacity-100');
+  aboutSlides[aboutCurrent].classList.add('opacity-0');
+
+  aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+
+  aboutSlides[aboutCurrent].classList.remove('opacity-0');
+  aboutSlides[aboutCurrent].classList.add('opacity-100');
+}
+
+// Ganti gambar tiap 2 detik
+setInterval(showNextAboutSlide, 2000);
+</script>
 
         <!-- Division Selection -->
         <section class="py-20">
@@ -2615,35 +2474,34 @@ setInterval(showNextSlide, 2000);
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Creative Media Division -->
                     <div class="team-division bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300" data-division="creative">
-                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Creative Division" class="w-full h-48 object-cover">
-                        <div class="p-8 text-center">
-                            <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-palette text-2xl text-white"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-red mb-4">Creative Media Division</h3>
-                            <p class="text-gray-600 mb-6">Our creative powerhouse specializing in design, video production, and innovative media solutions.</p>
-                            <div class="flex justify-center space-x-4 mb-6">
-                                <div class="w-4 h-4 bg-brand-red rounded-full"></div>
-                                <div class="w-4 h-4 bg-brand-yellow rounded-full"></div>
-                            </div>
-                            <button class="bg-brand-red text-white px-8 py-3 rounded-full hover:bg-red-800 transition-colors duration-300">
-                                Meet the Team
-                            </button>
-                        </div>
-                    </div>
+    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Creative Division" class="w-full h-48 object-cover">
+
+    <div class="p-6 text-center"> <!-- kurangi padding dari 8 ke 6 -->
+        <div class="w-24 h-24 flex items-center justify-center mx-auto mb-2"> <!-- kurangi mb-4 ke mb-3 -->
+            <img src="MediaMandiriLogodll/LogoMedia.png" alt="Logo Media" class="w-24 h-24 object-contain"> <!-- sesuaikan ukuran logo -->
+        </div>
+
+        <h3 class="text-2xl font-bold text-brand-red mb-1">Creative Media Division</h3> <!-- kurangi mb-4 ke mb-2 -->
+        <p class="text-gray-600 mb-8">Our creative powerhouse specializing in design, video production, and innovative media solutions.</p> <!-- kurangi mb-6 ke mb-4 -->
+
+        <button class="bg-brand-red text-white px-8 py-3 rounded-full hover:bg-red-800 transition-colors duration-300">
+            Meet the Team
+        </button>
+    </div>
+</div>
+
 
                     <!-- Strategic Solutions Division -->
                     <div class="team-division bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300" data-division="strategic">
                         <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strategic Division" class="w-full h-48 object-cover">
                         <div class="p-8 text-center">
-                            <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-chart-line text-2xl text-white"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-blue mb-4">Strategic Solutions Division</h3>
-                            <p class="text-gray-600 mb-6">Strategic consulting and business development team focused on growth and market expansion.</p>
-                            <div class="flex justify-center space-x-4 mb-6">
-                                <div class="w-4 h-4 bg-brand-blue rounded-full"></div>
-                            </div>
+                             <div class="w-24 h-24 flex items-center justify-center mx-auto mb-2"> <!-- kurangi mb-4 ke mb-3 -->
+            <img src="MediaMandiriLogodll/synergia.svg" alt="Logo Media" class="w-24 h-24 object-contain"> <!-- sesuaikan ukuran logo -->
+        </div>
+
+                            <h3 class="text-2xl font-bold text-brand-blue mb-1">Strategic Solutions Division</h3>
+                            <p class="text-gray-600 mb-8">Strategic consulting and business development team focused on growth and market expansion.</p>
+                        
                             <button class="bg-brand-blue text-white px-8 py-3 rounded-full hover:bg-blue-800 transition-colors duration-300">
                                 Meet the Team
                             </button>
@@ -2849,20 +2707,42 @@ setInterval(showNextSlide, 2000);
 
     <!-- Contact Page -->
     <div id="contact" class="page">
-        <!-- Hero Section -->
-        <div class="relative h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80');">
-            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-            <div class="relative z-10 h-full flex items-center justify-center">
-                <div class="text-center text-white">
-                    <h1 class="text-5xl font-bold mb-4 text-shadow animate-slide-up">Contact Us</h1>
-                    <p class="text-xl animate-fade-in" style="animation-delay: 0.2s;">Let's start your next creative project</p>
-                </div>
-            </div>
-        </div>
+
+        <div class="w-full h-[60vh] relative overflow-hidden">
+  <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
+  <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+  <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
+</div>
+
+<script>
+const contactSlides = document.querySelectorAll('.slide');
+let contactCurrent = 0;
+
+function showNextAboutSlide() {
+  aboutSlides[aboutCurrent].classList.remove('opacity-100');
+  aboutSlides[aboutCurrent].classList.add('opacity-0');
+
+  aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+
+  aboutSlides[aboutCurrent].classList.remove('opacity-0');
+  aboutSlides[aboutCurrent].classList.add('opacity-100');
+}
+
+// Ganti gambar tiap 2 detik
+setInterval(showNextAboutSlide, 2000);
+</script>
 
         <!-- Contact Form -->
         <section class="py-20">
     <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-4xl font-bold text-brand-red mb-4">Contact Us</h2>
+<p class="text-lg md:text-1xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+    Let's start your next creative project
+</p>
+<div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+
+                </div>
         <div class="grid lg:grid-cols-2 gap-12">
             
             <!-- Contact Form -->
@@ -3161,7 +3041,7 @@ form.addEventListener("submit", async function(event) {
                     <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-red-100 hover:text-white transition-colors duration-300 nav-link" data-page="home">Home</a></li>
-                        <li><a href="#" class="text-red-100 hover:text-white transition-colors duration-300 nav-link" data-page="about">About </a></li>
+                        <li><a href="#" class="text-red-100 hover:text-white transition-colors duration-300 nav-link" data-page="about">About Us</a></li>
                         <li><a href="#" class="text-red-100 hover:text-white transition-colors duration-300 nav-link" data-page="services">Services</a></li>
                         <li><a href="#" class="text-red-100 hover:text-white transition-colors duration-300 nav-link" data-page="projects">Projects</a></li>
                     </ul>
@@ -3887,59 +3767,9 @@ continentMaps.forEach(map => {
     });
 });
 
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 5,   
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 3000, 
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      320: { slidesPerView: 2, spaceBetween: 20 },
-      768: { slidesPerView: 3, spaceBetween: 25 },
-      1024: { slidesPerView: 5, spaceBetween: 30 },
-    },
-  });
-
     </script>
     
     <style>
-        .mySwiper {
-        overflow: visible !important; 
-        }
-        .swiper-wrapper {
-        transition-timing-function: linear !important; 
-        }
-        
-        .swiper-button-prev,
-        .swiper-button-next {
-        top: 50%;
-        transform: translateY(-50%);
-        width: auto;
-        height: auto;
-        background: none;     
-        border-radius: 0;     
-        box-shadow: none;     
-        color: #680307;          
-        z-index: 50;
-        font-size: 24px;     
-        margin-top: -60px;
-        }
-
-        .swiper-button-prev {
-        left: 10px;   
-        }
-
-        .swiper-button-next {
-        right: 10px; 
-        }
-
-
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -3993,39 +3823,64 @@ continentMaps.forEach(map => {
                 display: none !important;
             }
         }
-        
+        @font-face {
+    font-family: 'HelveticaBrand';
+    src: url('fonts/Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
         @font-face {
         font-family: 'Helvetica';
-        src: url("roman.ttf") format("truetype");
+        src: url("fonts/roman.ttf") format("truetype");
         font-weight: 400;
         }
         @font-face {
         font-family: 'Helvetica';
-        src: url("medium.ttf") format("truetype");
+        src: url("fonts/medium.ttf") format("truetype");
         font-weight: 500; 
         }
         @font-face {
         font-family: 'Helvetica';
-        src: url("bold.ttf") format("truetype");
+        src: url("fonts/bold.ttf") format("truetype");
         font-weight: 700;
         }
 
-        body {
-        font-family: 'Helvetica', Arial, sans-serif;
-        font-weight: 400; 
-        }
+        /* Font default untuk seluruh body */
+body {
+    font-family: 'HelveticaBrand', Arial, sans-serif;
+    font-weight: 500; /* Medium */
+}
 
-        h1, h2 {
-        font-weight: 700; 
-        }
+/* Heading besar, H1 pakai Black (900) */
+h1 {
+    font-family: 'HelveticaBrand', Arial, sans-serif;
+    font-weight: 900; /* Black */
+}
 
-        h3, h4 {
-        font-weight: 500; 
-        }
+/* H2 pakai Bold (700) */
+h2 {
+    font-family: 'HelveticaBrand', Arial, sans-serif;
+    font-weight: 700; /* Bold */
+}
 
-        p, span, li, a, button, div {
-        font-weight: 400; 
-        }
+/* H3 & H4 pakai Medium (500) */
+h3, h4 {
+    font-family: 'HelveticaBrand', Arial, sans-serif;
+    font-weight: 500; /* Medium */
+}
+
+/* H5 & H6 pakai Medium (500) juga */
+h5, h6 {
+    font-family: 'HelveticaBrand', Arial, sans-serif;
+    font-weight: 500; /* Medium */
+}
+
+/* Elemen teks normal */
+p, span, li, a, button, div {
+    font-family: 'HelveticaBrand', Arial, sans-serif;
+    font-weight: 500; /* Medium */
+}
+
         
     </style>
 </body>
