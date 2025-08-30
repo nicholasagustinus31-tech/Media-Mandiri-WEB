@@ -631,98 +631,270 @@ setInterval(showNextAboutSlide, 2000);
 
 
 
-        <!-- Services Categories -->
-        <section class="py-20">
-             <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold text-brand-red mb-4">Our Services</h2>
-<p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
-    From exclusive media representation to strategic communications, we help brands connect with audiences locally and globally.
-</p>
-<div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+       
 
+<!-- Services Categories -->
+<section class="py-20">
+    <div class="text-center mb-16 animate-fade-in">
+        <h2 class="text-4xl font-bold text-brand-red mb-4">Our Services</h2>
+        <p class="text-lg md:text-xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+            From exclusive media representation to strategic communications, we help brands connect with audiences locally and globally.
+        </p>
+        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-12"></div>
+        
+       <!-- Media Representatives Card -->
+    <!-- Service Cards -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+        
+        <!-- Media Representatives Card -->
+        <div class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-200 flex flex-col justify-between">
+            <div class="mb-6 text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-white to-gray-200 rounded-full flex items-center justify-center mb-4 mx-auto p-2">
+                    <img src="MediaMandiriLogodll/LogoMedia.png" alt="Media Representatives" class="w-full h-full object-contain" />
                 </div>
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Creative Design -->
-                    <div class="service-category bg-white rounded-xl shadow-lg overflow-hidden hover-scale cursor-pointer" data-service="creative">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Creative Design" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-palette text-3xl text-brand-red mr-4"></i>
-                                <h3 class="text-xl font-bold text-gray-800">Broadcast</h3>
-                            </div>
-                            <p class="text-gray-600 mb-4">Visual identity and branding solutions that make your brand memorable and impactful.</p>
-                            <button class="text-brand-red font-semibold hover:text-red-800">Learn More →</button>
+                <img src="services/mediarepresentatives.png" alt="Media Representatives Title" class="mx-auto max-h-10 object-contain mb-3" />
+            </div>
+            <button onclick="showDetails('media')" 
+                class="bg-brand-red text-white py-2 px-6 rounded-lg hover:bg-red-600 transition-colors duration-300 font-semibold mx-auto block">
+                View Details
+            </button>
+        </div>
+
+        <!-- Strategic Communications Card -->
+        <div class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-200 flex flex-col justify-between">
+            <div class="mb-6 text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-white to-gray-200 rounded-full flex items-center justify-center mb-4 mx-auto p-2">
+                    <img src="services/synergia.png" alt="Strategic Communications" class="w-full h-full object-contain" />
+                </div>
+                <img src="services/strategiccommunications.png" alt="Strategic Communications Title" class="mx-auto max-h-10 object-contain mb-3" />
+            </div>
+            <button onclick="showDetails('strategic')" 
+                class="bg-brand-yellow text-white py-2 px-6 rounded-lg hover:bg-yellow-500 transition-colors duration-300 font-semibold mx-auto block">
+                View Details
+            </button>
+        </div>
+    </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Details Sections -->
+    <!-- Media Representatives Details -->
+    <div id="media-details" class="details-section hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-brand-red mb-4">Media Representatives</h3>
+                <div class="w-16 h-1 bg-brand-red mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Broadcast -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-brand-red transform hover:-translate-y-2 h-48 flex flex-col">
+                    <div class="flex items-start space-x-4 flex-grow">
+                        <div class="flex-shrink-0">
+                            <img src="services/tv-circle.png" alt="Broadcast" class="w-20 20 object-contain" />
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Broadcast</h4>
+                            <p class="text-gray-600 text-sm">Media channel such as international television, offering global reach and strong brand visibility.</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Video Production -->
-                    <div class="service-category bg-white rounded-xl shadow-lg overflow-hidden hover-scale cursor-pointer" data-service="video">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Video Production" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-video text-3xl text-brand-red mr-4"></i>
-                                <h3 class="text-xl font-bold text-gray-800">Video Production</h3>
-                            </div>
-                            <p class="text-gray-600 mb-4">Professional video content from concept to delivery across all platforms and formats.</p>
-                            <button class="text-brand-red font-semibold hover:text-red-800">Learn More →</button>
+                <!-- Print -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-brand-red transform hover:-translate-y-2 h-48 flex flex-col">
+                    <div class="flex items-start space-x-4 flex-grow">
+                        <div class="flex-shrink-0">
+                            <img src="services/print - circle.png" alt="Print" class="w-20 h-20 object-contain" />
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Print</h4>
+                            <p class="text-gray-600 text-sm">Newspapers, magazines, and other global printed publications that provide targeted messaging and trusted editorial environments.</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Digital Marketing -->
-                    <div class="service-category bg-white rounded-xl shadow-lg overflow-hidden hover-scale cursor-pointer" data-service="digital">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Digital Marketing" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-bullhorn text-3xl text-brand-red mr-4"></i>
-                                <h3 class="text-xl font-bold text-gray-800">Digital Marketing</h3>
-                            </div>
-                            <p class="text-gray-600 mb-4">Strategic campaigns that drive engagement and deliver measurable results.</p>
-                            <button class="text-brand-red font-semibold hover:text-red-800">Learn More →</button>
+                <!-- Digital -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-brand-red transform hover:-translate-y-2 h-48 flex flex-col">
+                    <div class="flex items-start space-x-4 flex-grow">
+                        <div class="flex-shrink-0">
+                            <img src="services/digital - circle.png" alt="Digital" class="w-20 h-20 object-contain" />
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Digital</h4>
+                            <p class="text-gray-600 text-sm">Online platforms, including websites and programmatic advertising, for precise targeting and measurable results.</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Social Media -->
-                    <div class="service-category bg-white rounded-xl shadow-lg overflow-hidden hover-scale cursor-pointer" data-service="social">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Social Media" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-share-alt text-3xl text-brand-red mr-4"></i>
-                                <h3 class="text-xl font-bold text-gray-800">Social Media</h3>
-                            </div>
-                            <p class="text-gray-600 mb-4">Community building and social engagement strategies that amplify your brand voice.</p>
-                            <button class="text-brand-red font-semibold hover:text-red-800">Learn More →</button>
+                <!-- Out of Home -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-brand-red transform hover:-translate-y-2 h-48 flex flex-col">
+                    <div class="flex items-start space-x-4 flex-grow">
+                        <div class="flex-shrink-0">
+                            <img src="services/ooh - circle.png" alt="Out of Home" class="w-20 h-20 object-contain" />
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Out of Home (OOH)</h4>
+                            <p class="text-gray-600 text-sm">Outdoor advertising solutions such as billboards, transit media, and digital signage, delivering high-impact exposure in key locations.</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Event Management -->
-                    <div class="service-category bg-white rounded-xl shadow-lg overflow-hidden hover-scale cursor-pointer" data-service="events">
-                        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Event Management" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-calendar-alt text-3xl text-brand-red mr-4"></i>
-                                <h3 class="text-xl font-bold text-gray-800">Event Management</h3>
-                            </div>
-                            <p class="text-gray-600 mb-4">End-to-end event planning and execution that creates memorable experiences.</p>
-                            <button class="text-brand-red font-semibold hover:text-red-800">Learn More →</button>
+                <!-- National Media -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-brand-red md:col-span-2 lg:col-span-2 transform hover:-translate-y-2 h-48 flex flex-col">
+                    <div class="flex items-start space-x-4 flex-grow">
+                        <div class="flex-shrink-0">
+                            <img src="services/national media-circle.png" alt="National Media" class="w-20 h-20 object-contain" />
                         </div>
-                    </div>
-
-                    <!-- Print Media -->
-                    <div class="service-category bg-white rounded-xl shadow-lg overflow-hidden hover-scale cursor-pointer" data-service="print">
-                        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Print Media" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-print text-3xl text-brand-red mr-4"></i>
-                                <h3 class="text-xl font-bold text-gray-800">Print Media</h3>
-                            </div>
-                            <p class="text-gray-600 mb-4">High-quality print materials that enhance your brand presence in the physical world.</p>
-                            <button class="text-brand-red font-semibold hover:text-red-800">Learn More →</button>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">National Media</h4>
+                            <p class="text-gray-600 text-sm">In addition to representing international media, PT Media Mandiri also partners with leading national media outlets. Our strong relationships with top Indonesian publishers and platforms allow us to support clients in both local and international media placements.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+    <!-- Strategic Communications Details -->
+    <div id="strategic-details" class="details-section hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-brand-yellow mb-4">Strategic Communications</h3>
+                <div class="w-16 h-1 bg-brand-yellow mx-auto"></div>
+            </div>
+            
+            <!-- Synergia Communications Box -->
+            <div class="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-3xl p-10 shadow-2xl mb-12 border-2 border-dashed border-brand-yellow/40 hover:border-brand-yellow/70 transition-all duration-500 overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-brand-yellow/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-200/20 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
+            
+            <div class="relative z-10 text-center mb-8">
+                <div class="w-24 h-24 bg-gradient-to-br from-brand-yellow via-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl ring-4 ring-white ring-opacity-50 hover:scale-110 transition-transform duration-300">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-4xl font-bold bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent mb-6 tracking-tight">
+                    Synergia Communications
+                </h4>
+            </div>
+            
+            <!-- Content with Enhanced Typography -->
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <p class="text-gray-700 text-lg leading-relaxed text-center font-medium">
+                    Synergia Communications is a <span class="font-bold text-brand-yellow">public relations/communications division</span> in Media Mandiri built for a media landscape that never stands still. We help brands thrive in an era of disruption where <span class="font-bold text-orange-600">attention is earned, and trust is everything</span>. Beyond visibility, we deliver earned insight: strategic, data-backed communications that shape perception and drive impact.
+                </p>
+                <div class="w-20 h-1 bg-gradient-to-r from-brand-yellow to-orange-400 mx-auto my-6 rounded-full"></div>
+                <p class="text-gray-600 text-center italic">
+                    Comprehensive communication strategies designed to build reputation, engage stakeholders, and deliver measurable impact across industries.
+                </p>
+            </div>
+            </div>
+
+            <!-- Our Services Process -->
+<div class="bg-white rounded-2xl p-8 shadow-xl mb-12">
+    <h4 class="text-2xl font-bold text-gray-800 mb-12 text-center">Our Services</h4>
+    
+    <div class="relative flex flex-col md:flex-row items-start justify-between max-w-5xl mx-auto space-y-12 md:space-y-0">
+    <!-- Horizontal Line Connector for Desktop -->
+    <div class="hidden md:block absolute top-8 h-1 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-full" 
+         style="left: calc(12.5% + 32px); right: calc(12.5% + 32px);"></div>
+
+    <!-- Service 1 -->
+    <div class="relative flex flex-row md:flex-col items-center md:items-center text-left md:text-center w-full md:w-64 z-10">
+        <!-- Lingkaran -->
+        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-4 border-white">
+            1
+        </div>
+        <!-- Teks -->
+        <div class="ml-4 md:ml-0 mt-0 md:mt-6">
+            <h5 class="text-lg font-bold text-gray-800 mb-3">Public Relations (PR)</h5>
+            <p class="text-gray-600 text-sm leading-relaxed">Media engagement, press releases, and narrative development to strengthen your brand image.</p>
+        </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="relative flex flex-row md:flex-col items-center md:items-center text-left md:text-center w-full md:w-64 z-10">
+        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-4 border-white">
+            2
+        </div>
+        <div class="ml-4 md:ml-0 mt-0 md:mt-6">
+            <h5 class="text-lg font-bold text-gray-800 mb-3">Brand Positioning & Storytelling</h5>
+            <p class="text-gray-600 text-sm leading-relaxed">Crafting compelling stories to differentiate your brand.</p>
+        </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="relative flex flex-row md:flex-col items-center md:items-center text-left md:text-center w-full md:w-64 z-10">
+        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-4 border-white">
+            3
+        </div>
+        <div class="ml-4 md:ml-0 mt-0 md:mt-6">
+            <h5 class="text-lg font-bold text-gray-800 mb-3">Integrated Campaigns</h5>
+            <p class="text-gray-600 text-sm leading-relaxed">Multi-platform campaigns combining media, content, and creative strategy.</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+            <!-- Synergia Clients -->
+            <div class="text-center">
+                <h4 class="text-2xl font-bold text-gray-800 mb-8">Synergia Clients</h4>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <!-- Client Logo 1 -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-30 h-30 mx-auto flex items-center justify-center">
+                            <img src="services/synergia1.png" alt="Client 1" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    
+                    <!-- Client Logo 2 -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-30 h-30 mx-auto flex items-center justify-center">
+                            <img src="services/synergia2.png" alt="Client 2" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    
+                    <!-- Client Logo 3 -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-30 h-30 mx-auto flex items-center justify-center">
+                            <img src="services/synergia3.png" alt="Client 3" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    
+                    <!-- Client Logo 4 -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-20 h-20 md:w-30 md:h-30 mx-auto flex items-center justify-center">
+                            <img src="services/synergia4.png" alt="Client 4" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    
+                    <!-- Client Logo 5 -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <div class="w-30 h-30 mx-auto flex items-center justify-center">
+                            <img src="services/synergia5.png" alt="Client 5" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="text-center mt-12">
+        <button onclick="hideDetails()" class="back-btn hidden bg-gray-600 text-white py-3 px-8 rounded-lg hover:bg-gray-700 transition-colors duration-300 font-semibold">
+            Back to Services
+        </button>
+        <br> <br> 
+    </div>
+</section>
 
         <!-- Service Detail Modal -->
         <div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
@@ -3925,9 +4097,110 @@ setTimeout(() => {
 
 swiper.init();
 
+function showDetails(type) {
+        // Hide all details sections
+        const allDetails = document.querySelectorAll('.details-section');
+        allDetails.forEach(section => {
+            section.classList.add('hidden');
+        });
+        
+        // Hide back button
+        const backBtn = document.querySelector('.back-btn');
+        backBtn.classList.add('hidden');
+        
+        // Show selected details with animation
+        setTimeout(() => {
+            const targetSection = document.getElementById(type + '-details');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                backBtn.classList.remove('hidden');
+                
+                // Smooth scroll to details
+                targetSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        }, 100);
+    }
+
+    function hideDetails() {
+        const allDetails = document.querySelectorAll('.details-section');
+        const backBtn = document.querySelector('.back-btn');
+        
+        allDetails.forEach(section => {
+            section.classList.add('hidden');
+        });
+        backBtn.classList.add('hidden');
+        
+        document.querySelector('.service-card').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+
+    document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        hideDetails();
+    });
+    });
+    
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
     </script>
     
     <style>
+        :root {
+            --brand-red: #DC2626;
+            --brand-yellow: #F59E0B;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .details-section {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .service-card:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        }
+
         .swiper-slide .client-card {
         transform: scale(1) translateY(0);
         transition: all 0.3s ease;
