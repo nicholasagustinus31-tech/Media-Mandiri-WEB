@@ -116,42 +116,6 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        .timeline-item:first-child::before {
-    top: 0; /* Lingkaran berada di atas */
-    transform: translate(-50%, -50%);
-}
-
-.timeline-item:not(:first-child)::before {
-    top: 50%; /* Lingkaran berada di tengah */
-    transform: translate(-50%, -50%);
-}
-       /* Keep dots for all timeline items */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background: #680307;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-/* Remove the dot on the very first timeline item */
-.timeline-item:first-child::before {
-    display: none;
-}
-
-.timeline-line {
-  position: absolute;
-  top: 100px;   /* adjust until it starts exactly at your first circle */
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  background: #680307;
-}
 
         .continent-map {
             transition: all 0.3s ease;
@@ -497,76 +461,154 @@ setInterval(showNextAboutSlide, 2000);
 
 
         <!-- Timeline Section -->
-        <section class="py-20">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-brand-red mb-6">Our Journey</h2>
-                    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
-                </div>
-                <div class="relative flex flex-col gap-16">
-                    <div class="timeline-line"></div>
-                    <div class="space-y-16">
-                        <!-- Left box -->
-                        <div class="timeline-item relative flex items-center">
-                            <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
-                                <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl">
-                                    <h3 class="text-2xl font-bold text-brand-red mb-2">2009-2011</h3>
-                                    <h4 class="text-2xl font-semibold text-gray-800 mb-3">Our Humble Beginnings</h4>
-                                    <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center justify-center" style="width:200px;">
-                                <div class="relative flex flex-col items-center justify-center">
-                                    <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
-                                        <img src="billboard/Billboard2.svg" alt="Humble Beginnings" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-1/2 pl-8"></div>
-                        </div>
-                    </div>
-                    
-                   <!-- Right box -->
-                   <div class="timeline-item relative flex items-center">
-                        <div class="w-1/2 pr-8"></div>
-                        <div class="flex flex-col items-center justify-center" style="width:200px;">
-                            <div class="relative flex flex-col items-center justify-center">
-                                <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
-                                    <img src="billboard/Billboard3.svg" alt="Agency Born" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-1/2 pl-8 animate-slide-up flex flex-col items-start justify-center">
-                            <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
-                                <h3 class="text-2xl font-bold text-brand-red mb-2">March 2011</h3>
-                                <h4 class="text-2xl font-semibold text-gray-800 mb-3">An Agency is Born</h4>
-                                <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                            </div>
-                        </div>
-                    </div>
+       <section class="py-20 relative bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    
+    <!-- Heading -->
+    <div class="text-center mb-20">
+      <h2 class="text-5xl font-extrabold text-brand-red mb-4 tracking-tight">Our Journey</h2>
+      <p class="text-lg text-gray-500">From humble beginnings to a bold future</p>
+    </div>
 
-                    
-                   <!-- Left box -->
-                   <div class="timeline-item relative flex items-center">
-                        <div class="w-1/2 pr-8 text-right animate-slide-up flex flex-col items-end justify-center">
-                            <div class="timeline-content bg-white p-6 rounded-lg shadow-lg max-w-xl">
-                                <h3 class="text-2xl font-bold text-brand-red mb-2">2025</h3>
-                                <h4 class="text-2xl font-semibold text-gray-800 mb-3">First Expansion</h4>
-                                <p class="text-gray-600 text-lg">Leading the industry with sustainable media practices and next-generation creative solutions.</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center justify-center" style="width:200px;">
-                            <div class="relative flex flex-col items-center justify-center">
-                                <div class="bg-white rounded-full border-4 border-gray-200 shadow-lg flex items-center justify-center" style="width:160px;height:160px;">
-                                    <img src="billboard/Billboard5.svg" alt="2025 Expansion" class="rounded-full" style="width:148px;height:148px;object-fit:cover;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-1/2 pl-8"></div>
-                    </div>
-                </div>
+    <!-- Timeline wrapper -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-red to-brand-yellow transform -translate-x-1/2"></div>
+
+      <!-- Decorative mini circles -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 flex flex-col justify-between h-full">
+        <div class="w-3 h-3 bg-brand-yellow rounded-full shadow-md mb-20"></div>
+        <div class="w-3 h-3 bg-brand-red rounded-full shadow-md mb-20"></div>
+        <div class="w-3 h-3 bg-brand-yellow rounded-full shadow-md mb-20"></div>
+        <div class="w-3 h-3 bg-brand-red rounded-full shadow-md mb-20"></div>
+        <div class="w-3 h-3 bg-brand-yellow rounded-full shadow-md mb-20"></div>
+        <div class="w-3 h-3 bg-brand-red rounded-full shadow-md"></div>
+      </div>
+
+      <!-- Timeline items -->
+      <div class="space-y-28 relative z-10">
+        
+        <!-- Item 1 -->
+        <div class="flex items-center justify-between w-full relative">
+          <div class="w-5/12 text-right">
+            <div class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+              <h3 class="text-xl font-bold text-brand-red mb-2">2009–2011</h3>
+              <h4 class="text-2xl font-semibold text-gray-800 mb-3">Our Humble Beginnings</h4>
+              <p class="text-gray-600">We started small, building trust step by step.</p>
             </div>
-        </section>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-gradient-to-tr from-brand-red to-brand-yellow p-[6px] rounded-full shadow-xl">
+              <div class="bg-white rounded-full overflow-hidden w-40 h-40 flex items-center justify-center">
+                <img src="billboard/Billboard2.svg" alt="Humble Beginnings" class="w-36 h-36 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12"></div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="flex items-center justify-between w-full relative">
+          <div class="w-5/12"></div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-gradient-to-tr from-brand-yellow to-brand-red p-[6px] rounded-full shadow-xl">
+              <div class="bg-white rounded-full overflow-hidden w-40 h-40 flex items-center justify-center">
+                <img src="billboard/Billboard3.svg" alt="Agency Born" class="w-36 h-36 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12 text-left">
+            <div class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+              <h3 class="text-xl font-bold text-brand-red mb-2">March 2011</h3>
+              <h4 class="text-2xl font-semibold text-gray-800 mb-3">An Agency is Born</h4>
+              <p class="text-gray-600">We officially launched as a creative media agency.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="flex items-center justify-between w-full relative">
+          <div class="w-5/12 text-right">
+            <div class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+              <h3 class="text-xl font-bold text-brand-red mb-2">2015</h3>
+              <h4 class="text-2xl font-semibold text-gray-800 mb-3">First Milestone</h4>
+              <p class="text-gray-600">Achieved our first major nationwide campaign.</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-gradient-to-tr from-brand-red to-brand-yellow p-[6px] rounded-full shadow-xl">
+              <div class="bg-white rounded-full overflow-hidden w-40 h-40 flex items-center justify-center">
+                <img src="billboard/Billboard4.svg" alt="Milestone" class="w-36 h-36 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12"></div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="flex items-center justify-between w-full relative">
+          <div class="w-5/12"></div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-gradient-to-tr from-brand-yellow to-brand-red p-[6px] rounded-full shadow-xl">
+              <div class="bg-white rounded-full overflow-hidden w-40 h-40 flex items-center justify-center">
+                <img src="billboard/Billboard5.svg" alt="Expansion" class="w-36 h-36 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12 text-left">
+            <div class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+              <h3 class="text-xl font-bold text-brand-red mb-2">2018</h3>
+              <h4 class="text-2xl font-semibold text-gray-800 mb-3">Expansion</h4>
+              <p class="text-gray-600">Opened new offices and expanded into digital media.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="flex items-center justify-between w-full relative">
+          <div class="w-5/12 text-right">
+            <div class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+              <h3 class="text-xl font-bold text-brand-red mb-2">2022</h3>
+              <h4 class="text-2xl font-semibold text-gray-800 mb-3">Innovation</h4>
+              <p class="text-gray-600">Launched AI-driven marketing solutions for clients.</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-gradient-to-tr from-brand-red to-brand-yellow p-[6px] rounded-full shadow-xl">
+              <div class="bg-white rounded-full overflow-hidden w-40 h-40 flex items-center justify-center">
+                <img src="billboard/Billboard6.svg" alt="Innovation" class="w-36 h-36 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12"></div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="flex items-center justify-between w-full relative">
+          <div class="w-5/12"></div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-gradient-to-tr from-brand-yellow to-brand-red p-[6px] rounded-full shadow-xl">
+              <div class="bg-white rounded-full overflow-hidden w-40 h-40 flex items-center justify-center">
+                <img src="billboard/Billboard6.svg" alt="Future" class="w-36 h-36 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+          <div class="w-5/12 text-left">
+            <div class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+              <h3 class="text-xl font-bold text-brand-red mb-2">2025</h3>
+              <h4 class="text-2xl font-semibold text-gray-800 mb-3">The Future</h4>
+              <p class="text-gray-600">Moving forward with innovation, sustainability, and impact.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
         <!-- Values Section -->
         <section class="py-20 bg-gray-50">
