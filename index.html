@@ -535,8 +535,8 @@
 
     <!-- About Us Page -->
     <div id="about" class="page">
-        <!-- Hero Section -->
-        <div class="w-full h-[60vh] relative overflow-hidden">
+        <!-- About Us Hero Slider-->
+        <div class="w-full h-[60vh] relative overflow-hidden" style="margin-top: 80px;">
   <img src="billboard/Billboard4.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
   <img src="billboard/Billboard2.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
   <img src="billboard/Billboard3.svg" alt="Hero Image" class="slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
@@ -916,7 +916,7 @@ setInterval(showNextAboutSlide, 3000);
     <div id="services" class="page">
         <!-- Hero Section -->
         <!-- Service Hero Slider -->
-<div class="w-full h-[60vh] relative overflow-hidden">
+<div class="w-full h-[60vh] relative overflow-hidden" style="margin-top: 80px;">
   <img src="billboard/Billboard4.svg" alt="Hero Image" class="service-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
   <img src="billboard/Billboard2.svg" alt="Hero Image" class="service-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
   <img src="billboard/Billboard3.svg" alt="Hero Image" class="service-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
@@ -1240,7 +1240,7 @@ setInterval(showNextServiceSlide, 4000);
     <div id="projects" class="page">
         <!-- Hero Section -->
        <!-- Client Hero Slider -->
-<div class="w-full h-[60vh] relative overflow-hidden">
+<div class="w-full h-[60vh] relative overflow-hidden -mt-4">
   <img src="billboard/Billboard4.svg" alt="Client Image 1" class="client-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
   <img src="billboard/Billboard2.svg" alt="Client Image 2" class="client-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
   <img src="billboard/Billboard3.svg" alt="Client Image 3" class="client-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
@@ -1661,7 +1661,7 @@ setInterval(showNextClientSlide, 5000);
     <div id="peoples" class="page">
         <!-- Hero Section -->
         <!-- People Hero Slider -->
-<div class="w-full h-[60vh] relative overflow-hidden">
+<div class="w-full h-[60vh] relative overflow-hidden -mt-4">
   <img src="billboard/Billboard4.svg" alt="People Image 1" class="people-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
   <img src="billboard/Billboard2.svg" alt="People Image 2" class="people-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
   <img src="billboard/Billboard3.svg" alt="People Image 3" class="people-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
@@ -1936,7 +1936,7 @@ setInterval(showNextPeopleSlide, 4000);
     <div id="contact" class="page">
 
         <!-- Contact Hero Slider -->
-<div class="w-full h-[60vh] relative overflow-hidden">
+<div class="w-full h-[60vh] relative overflow-hidden -mt-4">
   <img src="billboard/Billboard4.svg" alt="Contact Image 1" class="contact-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-100">
   <img src="billboard/Billboard2.svg" alt="Contact Image 2" class="contact-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
   <img src="billboard/Billboard3.svg" alt="Contact Image 3" class="contact-slide w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 opacity-0">
@@ -3091,8 +3091,28 @@ function showDetails(type) {
             this.style.transform = 'translateY(0)';
         });
     });
-
+    
     </script>
+
+    <!-- Script Reset  -->
+    <script>
+    function forceResetServices() {
+        document.querySelectorAll('#media-details, #strategic-details')
+            .forEach(el => el.classList.add('hidden'));
+
+        const backBtn = document.querySelector('.back-btn');
+        if (backBtn) backBtn.classList.add('hidden');
+    }
+
+    document.querySelectorAll('[data-page]').forEach(link => {
+        link.addEventListener('click', () => {
+            forceResetServices();
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', forceResetServices);
+    </script>
+
     
     <style>
         :root {
