@@ -948,25 +948,13 @@ setInterval(showNextServiceSlide, 4000);
 <!-- Services Categories -->
 <section class="py-20">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Gambar di kiri -->
-            <div>
-                <img src="billboard/Billboard6.svg" alt="Our Services Illustration" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-
-            <!-- Teks di kanan -->
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-red mb-6 tracking-tight p-4 border-l-4 border-brand-yellow rounded-md inline-block"
-                    style="font-family: 'HelveticaBrand', sans-serif; background-color: #fff;">
-                    Our <span class="text-gray-800">Services</span>
-                </h2>
-
-                <p class="text-gray-600 text-base md:text-lg leading-relaxed"
-                   style="font-family: 'HelveticaBrand', sans-serif;">
-                    From exclusive media representation to <span class="font-semibold text-gray-800">strategic communications</span>, we help brands connect with audiences locally and globally.
-                </p>
-            </div>
-        </div>
+        <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold text-brand-red mb-4">Our Services</h2>
+    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+    <p class="text-lg md:text-1xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+            From exclusive media representation to strategic communications,</br> we help brands connect with audiences locally and globally.
+        </p>
+</div>
         
        <!-- Media Representatives Card -->
     <!-- Service Cards -->
@@ -1417,8 +1405,16 @@ setInterval(showNextClientSlide, 5000);
         </div>
 
  <!-- Tombol Navigasi -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- Next Button -->
+<div class="swiper-button-next !w-12 !h-12 !rounded-full !bg-brand-red !flex !items-center !justify-center !shadow-lg hover:!bg-red-600 transition-all duration-300">
+  <i class="fas fa-chevron-right text-white text-xl"></i>
+</div>
+
+<!-- Prev Button -->
+<div class="swiper-button-prev !w-12 !h-12 !rounded-full !bg-brand-red !flex !items-center !justify-center !shadow-lg hover:!bg-red-600 transition-all duration-300">
+  <i class="fas fa-chevron-left text-white text-xl"></i>
+</div>
+
         <br><br><br>
         <div class="swiper-pagination"></div>
         </div>
@@ -1691,10 +1687,11 @@ setInterval(showNextPeopleSlide, 4000);
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16 animate-fade-in">
                     <h2 class="text-4xl font-bold text-brand-red mb-4">Our People</h2>
+                    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
 <p class="text-lg md:text-1xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
     Select a division to meet our team members
 </p>
-<div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+
 
                 </div>
                 
@@ -1966,10 +1963,11 @@ setInterval(showNextContactSlide, 6000);
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16 animate-fade-in">
                     <h2 class="text-4xl font-bold text-brand-red mb-4">Contact Us</h2>
+                    <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
 <p class="text-lg md:text-1xl text-gray-700 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
     Let's start your next creative project
 </p>
-<div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
+
 
                 </div>
         <div class="grid lg:grid-cols-2 gap-12">
@@ -3172,6 +3170,12 @@ function showDetails(type) {
         .mySwiper {
         overflow: visible !important; 
         }
+
+        .swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+}
+
    
         .swiper-button-prev,
         .swiper-button-next {
