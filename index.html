@@ -1248,20 +1248,20 @@ setInterval(showNextClientSlide, 5000);
       <!-- Partner Logos (Clickable) -->
       <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
         <!-- Partner 1 -->
-        <a href="https://www.grey.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
-          <img src="our clients/pubintl.svg" alt="Grey Agency Logo"
+        <a href="https://pubintl.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+          <img src="our clients/pubintl.svg" alt="Publishers international Logo"
                class="h-16 object-contain  group-hover:-0 group-hover:scale-105 transition-all duration-300">
         </a>
 
         <!-- Partner 2 -->
-        <a href="https://www.ogilvy.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
-          <img src="Featured Projects img/outlast.avif" alt="Ogilvy Logo"
+        <a href="https://www.outlastse.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+          <img src="Featured Projects img/outlast.avif" alt="Outlast Sports & Entertainment Logo"
                class="h-16 object-contain  group-hover:-0 group-hover:scale-105 transition-all duration-300">
         </a>
 
         <!-- Partner 3 -->
-        <a href="https://www.publicisgroupe.com/en" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
-          <img src="Featured Projects img/kymaprod.svg" alt="Publicis Groupe Logo"
+        <a href="https://kymaproduction.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+          <img src="Featured Projects img/kymaprod.svg" alt="Kyma Production Logo"
                class="h-14 object-contain  group-hover:-0 group-hover:scale-105 transition-all duration-300">
         </a>
 
@@ -1276,7 +1276,88 @@ setInterval(showNextClientSlide, 5000);
 
 </div>
 
-    
+    <div id="case" class="page">
+
+  <!-- Hero Slider -->
+  <div class="w-full h-[60vh] relative overflow-hidden -mt-4 z-0">
+    <img src="billboard/Billboard4.svg" alt="Case Study Image 1" class="cs-slide w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-100">
+    <img src="billboard/Billboard2.svg" alt="Case Study Image 2" class="cs-slide w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-0">
+    <img src="billboard/Billboard3.svg" alt="Case Study Image 3" class="cs-slide w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-0">
+  </div>
+
+  <script>
+    // simple slideshow
+    document.addEventListener('DOMContentLoaded', function () {
+      const slides = document.querySelectorAll('.cs-slide');
+      if (!slides.length) return;
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove('opacity-100');
+        slides[current].classList.add('opacity-0');
+        current = (current + 1) % slides.length;
+        slides[current].classList.remove('opacity-0');
+        slides[current].classList.add('opacity-100');
+      }, 5000);
+    });
+  </script>
+
+  <!-- Section: Case Studies -->
+  <section class="py-20 bg-white relative z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Title & Description -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-brand-red mb-6">Case Studies</h2>
+        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
+        <p class="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
+          Real results from real collaborations. Explore how our strategy, creative, and production work
+          delivered measurable impact across industries.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Case 1 -->
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300">
+          <img src="our clients/lahendong.webp" alt="Muara Jambi Case Study" class="w-full h-56 object-cover">
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-semibold mb-2 text-brand-red">Kementerian Pendidikan & Kebudayaan</h3>
+            <p class="text-gray-600 mb-4">Media: <span class="font-medium text-gray-800">National Geographic</span></p>
+            <p class="text-gray-600 mb-6 text-justify">
+              A storytelling partnership highlighting Indonesia’s rich cultural heritage through the Muara Jambi Ancient University site — blending education, history, and tourism into an immersive visual experience.
+            </p>
+            <div class="mt-auto">
+              <a href="https://www.nationalgeographic.com/travel/topic/paid-content-muara-jambi-ancient-university"
+                 target="_blank" rel="noopener noreferrer"
+                 class="inline-block bg-brand-red text-white px-5 py-2 rounded-full font-medium hover:bg-red-800 transition-colors duration-300">
+                View Case Study →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 2 -->
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300">
+          <img src="our clients/CandiMuarajambiFinal-1.avif" alt="Pertamina Case Study" class="w-full h-56 object-cover">
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-semibold mb-2 text-brand-red">Pertamina</h3>
+            <p class="text-gray-600 mb-4">Media: <span class="font-medium text-gray-800">CNN</span></p>
+            <p class="text-gray-600 mb-6 text-justify">
+              A branded content initiative on CNN spotlighting Indonesia’s journey toward energy transition — inspiring awareness of renewable innovation and sustainability efforts led by Pertamina.
+            </p>
+            <div class="mt-auto">
+              <a href="https://edition.cnn.com/sponsor/edition/pertamina/indonesia-energy-transition"
+                 target="_blank" rel="noopener noreferrer"
+                 class="inline-block bg-brand-red text-white px-5 py-2 rounded-full font-medium hover:bg-red-800 transition-colors duration-300">
+                View Case Study →
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
     <!-- Swiper -->
     <!-- <div class="relative w-full mt-8">
         <div class="swiper mySwiper">
