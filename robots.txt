@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://mediaman.co.id/sitemap.xml
